@@ -9,40 +9,26 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --black: #0a0a0f;
-    --deep: #0f0f1a;
-    --card: #13131f;
-    --border: #1e1e2e;
+    --white: #ffffff;
+    --off-white: #faf9f6;
+    --text: #1a1a1a;
+    --muted: #666;
     --gold: #c9a84c;
-    --gold-dim: #8a6f30;
-    --red: #8b1a1a;
-    --red-bright: #c0392b;
-    --white: #f0ece0;
-    --muted: #7a7a8a;
-    --body: 'Inter', sans-serif;
+    --gold-dark: #8a6f30;
+    --border: #e8e4dc;
     --display: 'Cinzel', serif;
+    --body: 'Inter', sans-serif;
   }
 
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--black);
-    color: var(--white);
+    background: var(--white);
+    color: var(--text);
     font-family: var(--body);
     font-weight: 300;
     line-height: 1.7;
     overflow-x: hidden;
-  }
-
-  /* NOISE TEXTURE OVERLAY */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.4;
   }
 
   /* HERO */
@@ -55,70 +41,86 @@
     justify-content: center;
     text-align: center;
     padding: 80px 24px 60px;
-    background: radial-gradient(ellipse at 50% 0%, #1a0a2e 0%, var(--black) 60%);
+    background: linear-gradient(160deg, #fffef9 0%, #f5f0ff 50%, #fff9f0 100%);
     overflow: hidden;
   }
 
-  .hero::after {
+  .hero::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1px;
-    height: 80px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #e63946, #f4a261, #f9c74f, #2a9d8f, #457b9d, #9b5de5);
   }
+
+  /* Background card ambiance */
+  .bg-card {
+    position: absolute;
+    opacity: 0.06;
+    pointer-events: none;
+    border-radius: 8px;
+  }
+
+  .hero-content { position: relative; z-index: 1; }
 
   .sigil {
     font-family: var(--display);
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.4em;
-    color: var(--gold-dim);
+    color: var(--gold-dark);
     text-transform: uppercase;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 
-  .hero-eyebrow {
-    font-family: var(--display);
-    font-size: 11px;
-    letter-spacing: 0.35em;
-    color: var(--red-bright);
-    text-transform: uppercase;
-    margin-bottom: 20px;
+  .rainbow-bar {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #e63946, #f4a261, #f9c74f, #2a9d8f, #9b5de5);
+    margin: 0 auto 32px;
+    border-radius: 2px;
   }
 
   h1 {
     font-family: var(--display);
-    font-size: clamp(2rem, 6vw, 4.2rem);
+    font-size: clamp(2rem, 6vw, 4rem);
     font-weight: 900;
     line-height: 1.1;
-    letter-spacing: -0.01em;
-    color: var(--white);
-    max-width: 800px;
+    color: var(--text);
+    max-width: 760px;
     margin-bottom: 12px;
   }
 
   h1 em {
     font-style: normal;
-    color: var(--gold);
+    background: linear-gradient(90deg, var(--gold), #f4a261);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .hero-sub {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
     color: var(--muted);
-    max-width: 560px;
+    max-width: 520px;
     margin: 20px auto 48px;
     font-weight: 400;
-    line-height: 1.6;
+  }
+
+  /* MAGICIAN CARD */
+  .magician-card {
+    width: 140px;
+    border-radius: 8px;
+    box-shadow: 0 8px 40px rgba(201,168,76,0.25);
+    margin-bottom: 36px;
+    border: 2px solid rgba(201,168,76,0.3);
   }
 
   /* BUTTONS */
   .btn-primary {
     display: inline-block;
-    background: var(--gold);
-    color: var(--black);
+    background: linear-gradient(135deg, var(--gold), #f4a261);
+    color: #fff;
     font-family: var(--display);
     font-size: 13px;
     font-weight: 600;
@@ -126,24 +128,13 @@
     text-transform: uppercase;
     text-decoration: none;
     padding: 18px 48px;
-    border: none;
+    border-radius: 2px;
     cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-    position: relative;
+    transition: opacity 0.2s, transform 0.15s;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.3);
   }
 
-  .btn-primary::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    background: var(--gold-dim);
-    z-index: -1;
-  }
-
-  .btn-primary:hover {
-    background: #e0be6a;
-    transform: translateY(-1px);
-  }
+  .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
 
   .btn-price {
     display: block;
@@ -151,48 +142,47 @@
     letter-spacing: 0.1em;
     color: var(--muted);
     margin-top: 14px;
-    font-family: var(--body);
-    font-weight: 400;
-  }
-
-  .guarantee-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    color: var(--gold-dim);
-    text-transform: uppercase;
-    margin-top: 20px;
-    font-family: var(--display);
-  }
-
-  .guarantee-badge::before {
-    content: '✦';
-    color: var(--gold);
   }
 
   /* SECTIONS */
   section {
     position: relative;
-    z-index: 1;
     padding: 80px 24px;
     max-width: 760px;
     margin: 0 auto;
   }
 
+  .full-section {
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .full-section .inner {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .alt-section {
+    background: var(--off-white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
   .divider {
     width: 40px;
-    height: 1px;
-    background: var(--gold);
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), #f4a261);
     margin: 0 auto 48px;
+    border-radius: 1px;
   }
 
   .section-label {
     font-family: var(--display);
     font-size: 10px;
     letter-spacing: 0.4em;
-    color: var(--gold-dim);
+    color: var(--gold-dark);
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 16px;
@@ -200,256 +190,202 @@
 
   h2 {
     font-family: var(--display);
-    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
     font-weight: 600;
     line-height: 1.2;
     text-align: center;
     margin-bottom: 32px;
-    color: var(--white);
+    color: var(--text);
   }
 
   h2 em {
     font-style: normal;
-    color: var(--gold);
+    background: linear-gradient(90deg, var(--gold), #f4a261);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   p {
-    color: #b0acaa;
+    color: #555;
     font-size: 1.05rem;
     margin-bottom: 20px;
-    max-width: 640px;
+    max-width: 620px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  p strong {
-    color: var(--white);
-    font-weight: 500;
-  }
+  p strong { color: var(--text); font-weight: 500; }
 
-  /* PAIN SECTION */
-  .pain-section {
-    background: var(--deep);
-    max-width: 100%;
-    padding: 80px 24px;
-    text-align: center;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .pain-section .inner {
-    max-width: 640px;
-    margin: 0 auto;
-  }
-
+  /* PAIN QUOTE */
   .pain-quote {
     font-family: var(--display);
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.55rem);
     font-weight: 400;
-    line-height: 1.5;
-    color: var(--white);
+    line-height: 1.65;
+    color: var(--text);
     font-style: italic;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+    padding: 0 20px;
     position: relative;
-    padding: 0 24px;
   }
 
   .pain-quote::before {
-    content: '"';
-    font-size: 4rem;
-    color: var(--gold-dim);
+    content: '\201C';
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.25;
     position: absolute;
-    left: -8px;
-    top: -16px;
+    left: -4px;
+    top: -20px;
     line-height: 1;
     font-family: var(--display);
   }
 
-  /* WHAT YOU GET */
+  /* OFFER GRID */
   .offer-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2px;
-    margin: 48px 0;
-  }
-
-  .offer-item {
-    background: var(--card);
+    gap: 1px;
+    background: var(--border);
     border: 1px solid var(--border);
-    padding: 28px 32px;
-    display: grid;
-    grid-template-columns: 32px 1fr;
-    gap: 20px;
-    align-items: start;
-    transition: border-color 0.2s;
-  }
-
-  .offer-item:hover {
-    border-color: var(--gold-dim);
-  }
-
-  .offer-glyph {
-    font-family: var(--display);
-    font-size: 18px;
-    color: var(--gold);
-    line-height: 1.4;
-    text-align: center;
-  }
-
-  .offer-title {
-    font-family: var(--display);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--white);
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-
-  .offer-desc {
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  /* PROOF */
-  .proof-block {
-    background: var(--card);
-    border-left: 2px solid var(--gold);
-    padding: 32px 36px;
-    margin: 48px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 40px 0;
     text-align: left;
   }
 
-  .proof-text {
-    font-family: var(--display);
-    font-size: 1rem;
-    font-style: italic;
-    color: var(--white);
-    line-height: 1.7;
-    margin-bottom: 16px;
+  .offer-item {
+    background: var(--white);
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 16px;
+    align-items: start;
   }
 
-  .proof-attribution {
+  .offer-glyph { font-size: 20px; line-height: 1.4; text-align: center; }
+  .offer-item:nth-child(1) .offer-glyph { color: #e63946; }
+  .offer-item:nth-child(2) .offer-glyph { color: #f4a261; }
+  .offer-item:nth-child(3) .offer-glyph { color: #2a9d8f; }
+  .offer-item:nth-child(4) .offer-glyph { color: #457b9d; }
+
+  .offer-title {
+    font-family: var(--display);
     font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--gold-dim);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--text);
     text-transform: uppercase;
-    font-family: var(--display);
+    margin-bottom: 4px;
   }
 
-  /* HOW IT WORKS */
-  .steps {
-    counter-reset: steps;
-    margin: 48px 0;
-  }
+  .offer-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin: 0; }
+
+  /* STEPS */
+  .steps { margin: 40px 0; text-align: left; }
 
   .step {
-    counter-increment: steps;
     display: grid;
     grid-template-columns: 48px 1fr;
-    gap: 24px;
+    gap: 20px;
     align-items: start;
-    margin-bottom: 32px;
-    padding-bottom: 32px;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
     border-bottom: 1px solid var(--border);
   }
 
-  .step:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
+  .step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
   .step-num {
     font-family: var(--display);
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 900;
-    color: var(--border);
+    background: linear-gradient(135deg, var(--gold), #f4a261);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     line-height: 1;
     padding-top: 4px;
   }
 
   .step-title {
     font-family: var(--display);
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--gold);
+    letter-spacing: 0.08em;
+    color: var(--text);
     text-transform: uppercase;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
-  .step-desc {
-    font-size: 0.95rem;
-    color: #9a9699;
-    line-height: 1.7;
-    margin: 0;
-  }
+  .step-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin: 0; }
 
-  /* FOR WHO */
-  .for-who {
-    background: radial-gradient(ellipse at 50% 100%, #1a0a2e 0%, var(--black) 70%);
-    max-width: 100%;
-    padding: 80px 24px;
-    text-align: center;
-    border-top: 1px solid var(--border);
-  }
-
-  .for-who .inner {
-    max-width: 640px;
-    margin: 0 auto;
-  }
-
-  .check-list {
-    list-style: none;
-    text-align: left;
-    margin: 32px 0;
-  }
+  /* CHECK LIST */
+  .check-list { list-style: none; text-align: left; margin: 32px 0; }
 
   .check-list li {
     padding: 14px 0;
     border-bottom: 1px solid var(--border);
     font-size: 1rem;
-    color: #b0acaa;
+    color: #444;
     display: flex;
     align-items: flex-start;
-    gap: 16px;
+    gap: 14px;
     line-height: 1.5;
   }
 
-  .check-list li::before {
-    content: '✦';
-    color: var(--gold);
-    font-size: 10px;
-    flex-shrink: 0;
-    padding-top: 5px;
+  .check-list li::before { content: '✦'; font-size: 10px; flex-shrink: 0; padding-top: 5px; }
+  .check-list li:nth-child(1)::before { color: #e63946; }
+  .check-list li:nth-child(2)::before { color: #f4a261; }
+  .check-list li:nth-child(3)::before { color: #f9c74f; }
+  .check-list li:nth-child(4)::before { color: #2a9d8f; }
+  .check-list li:nth-child(5)::before { color: #457b9d; }
+  .check-list li:nth-child(6)::before { color: #9b5de5; }
+  .check-list li:last-child { border-bottom: none; }
+
+  /* CARDS ROW */
+  .cards-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+    flex-wrap: wrap;
   }
 
-  .check-list li:last-child {
-    border-bottom: none;
+  .cards-row img {
+    width: 90px;
+    border-radius: 6px;
+    opacity: 0.18;
+    filter: grayscale(20%);
   }
 
   /* FINAL CTA */
   .final-cta {
     text-align: center;
     padding: 100px 24px;
-    background: var(--deep);
-    border-top: 1px solid var(--border);
-    max-width: 100%;
+    background: linear-gradient(160deg, #fffef9 0%, #f5f0ff 50%, #fff9f0 100%);
+    position: relative;
+    overflow: hidden;
   }
 
-  .final-cta .inner {
-    max-width: 560px;
-    margin: 0 auto;
+  .final-cta::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #e63946, #f4a261, #f9c74f, #2a9d8f, #457b9d, #9b5de5);
   }
+
+  .final-cta .inner { position: relative; z-index: 1; max-width: 540px; margin: 0 auto; }
 
   .price-display {
     font-family: var(--display);
     font-size: clamp(3rem, 8vw, 5rem);
     font-weight: 900;
-    color: var(--gold);
+    background: linear-gradient(135deg, var(--gold), #f4a261);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     line-height: 1;
     margin: 32px 0 8px;
   }
@@ -466,7 +402,7 @@
   .urgency {
     font-size: 11px;
     letter-spacing: 0.2em;
-    color: var(--red-bright);
+    color: #e63946;
     text-transform: uppercase;
     font-family: var(--display);
     margin-top: 24px;
@@ -475,11 +411,10 @@
   .love-note {
     font-size: 0.9rem;
     color: var(--muted);
-    margin-top: 40px;
+    margin-top: 32px;
     font-style: italic;
   }
 
-  /* FOOTER */
   footer {
     text-align: center;
     padding: 32px 24px;
@@ -489,148 +424,157 @@
     color: var(--muted);
     text-transform: uppercase;
     font-family: var(--display);
+    background: var(--off-white);
   }
 
-  /* RESPONSIVE */
   @media (max-width: 600px) {
-    .offer-item {
-      padding: 20px 20px;
-      gap: 14px;
-    }
-    .proof-block {
-      padding: 24px 20px;
-    }
-    section {
-      padding: 60px 20px;
-    }
+    .offer-item { padding: 18px; }
+    section { padding: 60px 20px; }
+    .cards-row img { width: 70px; }
   }
 
-  /* SCROLL ANIMATIONS */
   .fade-up {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="sigil">I AM Method ✦ Archetype Tarot</div>
-  <div class="hero-eyebrow">Your karmic block identified. Your path revealed.</div>
-  <h1>Stop performing.<br><em>Start becoming.</em></h1>
-  <p class="hero-sub">A personal archetype tarot reading that shows you the specific karmic block suppressing your authentic expression — and what your life looks like on the other side of removing it.</p>
-  <a href="https://calendly.com/naturopathpain/new-meeting" class="btn-primary">Book Your Reading</a>
-  <span class="btn-price">$55 · Delivered to your email · Money back guarantee</span>
-  <div class="guarantee-badge">Money back guarantee — no questions asked</div>
+
+  <!-- Background card ambiance -->
+  <img class="bg-card" src="sun.png" style="width:280px;top:-40px;right:-60px;transform:rotate(12deg)">
+  <img class="bg-card" src="fool.png" style="width:200px;bottom:-30px;left:-40px;transform:rotate(-8deg)">
+  <img class="bg-card" src="world.png" style="width:180px;bottom:60px;right:20px;transform:rotate(5deg)">
+
+  <div class="hero-content">
+    <div class="sigil">I AM Method · Archetype Tarot</div>
+    <div class="rainbow-bar"></div>
+
+    <!-- Magician card prominent -->
+    <img src="magician.png" class="magician-card" alt="The Magician tarot card">
+
+    <h1>This is where your<br><em>journey begins.</em></h1>
+    <p class="hero-sub">A personal archetype tarot reading that identifies the specific karmic block suppressing your authentic expression — and shows you your path to the magician.</p>
+    <a href="https://calendly.com/naturopathpain/new-meeting" class="btn-primary">Begin Your Journey</a>
+    <span class="btn-price">$55 · Delivered to your email</span>
+  </div>
 </section>
 
 <!-- PAIN -->
-<div class="pain-section">
+<div class="full-section alt-section">
   <div class="inner fade-up">
-    <p class="pain-quote">You've built something real. But you still can't say what you actually think. Wear what you actually want. Be around people who actually get you. And you know there's more to this world than what everyone around you is willing to talk about.</p>
-    <p style="color: var(--muted); font-size: 0.95rem;">That's not a personality flaw. That's a karmic block. And it has a name, a shape, and a path through it.</p>
+    <p class="pain-quote">You can feel who you're meant to be. You just can't seem to get there. Something keeps pulling you back into the same patterns, the same relationships, the same version of yourself you've been trying to leave behind.</p>
+    <p style="font-size:0.95rem;">That's not a character flaw. That's a karmic block. And it has a name, a shape, and a path through it.</p>
   </div>
 </div>
 
-<!-- WHAT IT IS -->
-<section class="fade-up">
-  <div class="section-label">The Reading</div>
+<!-- THE MAGICIAN -->
+<section class="fade-up" style="text-align:center">
+  <div class="section-label">The Destination</div>
   <div class="divider"></div>
-  <h2>This isn't a general tarot reading.<br><em>This is a diagnosis.</em></h2>
-  <p>Using the tarot — the oldest map of archetypes the subconscious already speaks through — I meditate on your specific situation and draw your cards before you hear a word from me.</p>
-  <p>What comes through is <strong>precise, personal, and specific to you.</strong> Not a generic reading that could apply to anyone. The exact karmic cycle you're in. The specific block suppressing your expression. What breaks it. What you look like on the other side.</p>
-  <p>This is called an <strong>Archetype Tarot Read</strong> — and it uses the same language your dreams speak to reveal what years of conventional approaches circle around.</p>
+  <h2>The magician is who<br><em>you're becoming.</em></h2>
+  <p>The magician — tarot card I — is the fully integrated self. Someone who channels their authentic expression toward a higher purpose and manifests from a place of wholeness rather than lack.</p>
+  <p>Every karmic block you carry is distance between who you are now and who you're becoming. The reading maps that distance precisely and shows you where to begin.</p>
+
+  <!-- Faint card row -->
+  <div class="cards-row">
+    <img src="fool.png" alt="">
+    <img src="magician.png" alt="" style="opacity:0.55;filter:none;width:90px">
+    <img src="world.png" alt="">
+    <img src="sun.png" alt="">
+  </div>
+
+  <p style="font-size:0.9rem;font-style:italic;color:var(--muted)">The fool begins. The magician integrates. The world is the destination.</p>
 </section>
 
-<!-- WHAT YOU GET -->
-<div class="pain-section">
-  <div class="inner">
-    <div class="section-label fade-up">What You Receive</div>
-    <div class="divider fade-up"></div>
-    <h2 class="fade-up">Everything delivered<br><em>straight to your email.</em></h2>
+<!-- WHAT IT IS -->
+<div class="full-section alt-section">
+  <div class="inner fade-up">
+    <div class="section-label">The Reading</div>
+    <div class="divider"></div>
+    <h2>This isn't a general tarot reading.<br><em>This is a diagnosis.</em></h2>
+    <p>Using the tarot — the oldest map of archetypes the subconscious already speaks through — I meditate on your specific situation and draw your cards before you hear a word from me.</p>
+    <p>What comes through is <strong>precise, personal, and specific to you.</strong> The exact karmic cycle you're in. The specific block suppressing your expression. What breaks it. What you look like on the other side.</p>
+    <p>From the reading I can see exactly how I can support your journey going deeper.</p>
+  </div>
+</div>
 
-    <div class="offer-grid fade-up">
-      <div class="offer-item">
-        <div class="offer-glyph">☽</div>
-        <div>
-          <div class="offer-title">Personal Voice Note</div>
-          <p class="offer-desc">A recorded reading specifically for you — your archetype, your karmic cycle, your specific block, and what breaks it. Not scripted. Not generic. Drawn directly from your cards.</p>
-        </div>
+<!-- WHAT YOU GET -->
+<section class="fade-up">
+  <div class="section-label" style="text-align:center">What You Receive</div>
+  <div class="divider"></div>
+  <h2 style="text-align:center">Everything delivered<br><em>straight to your email.</em></h2>
+
+  <div class="offer-grid">
+    <div class="offer-item">
+      <div class="offer-glyph">♫</div>
+      <div>
+        <div class="offer-title">Personal Voice Note</div>
+        <p class="offer-desc">A recorded reading specifically for you — your archetype, your karmic cycle, your specific block, and what breaks it. Not scripted. Not generic.</p>
       </div>
-      <div class="offer-item">
-        <div class="offer-glyph">✦</div>
-        <div>
-          <div class="offer-title">Full Spread Image</div>
-          <p class="offer-desc">An image of every card drawn for your reading so you can follow along and return to it whenever you need to.</p>
-        </div>
+    </div>
+    <div class="offer-item">
+      <div class="offer-glyph">✦</div>
+      <div>
+        <div class="offer-title">Full Spread Image</div>
+        <p class="offer-desc">Every card drawn for your reading so you can follow along and return to it whenever you need to.</p>
       </div>
-      <div class="offer-item">
-        <div class="offer-glyph">☿</div>
-        <div>
-          <div class="offer-title">Written Summary</div>
-          <p class="offer-desc">The karmic cycle, the block, and the path through — documented clearly so you can reference it as you do the work.</p>
-        </div>
+    </div>
+    <div class="offer-item">
+      <div class="offer-glyph">☿</div>
+      <div>
+        <div class="offer-title">Written Summary</div>
+        <p class="offer-desc">The karmic cycle, the block, and the path through — documented clearly so you can reference it as you do the work.</p>
       </div>
-      <div class="offer-item">
-        <div class="offer-glyph">⚡</div>
-        <div>
-          <div class="offer-title">Personalized Action Tips</div>
-          <p class="offer-desc">Specific immediate steps tailored to your exact block — so you leave with momentum, not just clarity.</p>
-        </div>
-      </div>
-      <div class="offer-item">
-        <div class="offer-glyph">◎</div>
-        <div>
-          <div class="offer-title">Money Back Guarantee</div>
-          <p class="offer-desc">If the reading doesn't resonate you get your money back. No questions asked. The confidence to offer that comes from knowing what this work is capable of.</p>
-        </div>
+    </div>
+    <div class="offer-item">
+      <div class="offer-glyph">⚡</div>
+      <div>
+        <div class="offer-title">Personalized Action Tips</div>
+        <p class="offer-desc">Specific immediate steps tailored to your exact block — so you leave with momentum, not just clarity.</p>
       </div>
     </div>
   </div>
-</div>
-
-
+</section>
 
 <!-- HOW IT WORKS -->
-<div class="pain-section">
+<div class="full-section alt-section">
   <div class="inner">
     <div class="section-label fade-up">The Process</div>
     <div class="divider fade-up"></div>
     <h2 class="fade-up">How it works.</h2>
-
     <div class="steps fade-up">
       <div class="step">
         <div class="step-num">01</div>
         <div>
           <div class="step-title">Book your time</div>
-          <p class="step-desc">Pick a time when you'll have 15 quiet minutes to receive the reading fully. This isn't background noise — it's information worth sitting with.</p>
+          <p class="step-desc">Pick a time when you'll have 15 quiet minutes to receive the reading fully. Tell me one area of your expression you want clarity on.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">02</div>
-        <div>
-          <div class="step-title">Tell me your focus</div>
-          <p class="step-desc">One area of your expression you're struggling with. It could be how you speak, how you dress, a relationship pattern, your creative work — anything where you feel suppressed or stuck.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
         <div>
           <div class="step-title">I meditate and draw</div>
           <p class="step-desc">Before you receive anything I sit with your situation, meditate on it, and draw your cards. What comes through is specific to you — not pulled from a script.</p>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">04</div>
+        <div class="step-num">03</div>
         <div>
           <div class="step-title">Your reading arrives</div>
-          <p class="step-desc">At the time you selected your email arrives with the voice note, the spread image, the written summary, and your personalized action tips. Find somewhere quiet and receive it fully.</p>
+          <p class="step-desc">At the time you selected your email arrives with the voice note, the spread image, the written summary, and your personalized action tips.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-title">Your journey continues</div>
+          <p class="step-desc">The reading opens the door. From here we can figure out together what your path to the magician looks like — and how deep you want to go.</p>
         </div>
       </div>
     </div>
@@ -638,62 +582,65 @@
 </div>
 
 <!-- FOR WHO -->
-<div class="for-who">
-  <div class="inner fade-up">
-    <div class="section-label">Is This For You</div>
+<section class="fade-up" style="text-align:center">
+  <div class="section-label">Is This For You</div>
+  <div class="divider"></div>
+  <h2>This reading is for you if<br><em>any of this is true.</em></h2>
+  <ul class="check-list">
+    <li>You can feel the gap between who you are now and who you're becoming — and something keeps pulling you back</li>
+    <li>You're spiritually aware and know there's more to this world than what the mainstream is willing to talk about</li>
+    <li>You keep repeating the same patterns in relationships, work, or creative life and can't figure out why</li>
+    <li>Your authentic expression — how you speak, dress, create, connect — feels suppressed by something you can't quite name</li>
+    <li>You've done the work — shadow work, therapy, journaling — and something still isn't moving at the identity level</li>
+    <li>You resonate deeply with certain characters in anime, film, or fiction and sense they're showing you something about yourself</li>
+  </ul>
+</section>
+
+<!-- ABOUT -->
+<div class="full-section alt-section">
+  <div class="inner fade-up" style="text-align:center">
+    <div class="section-label">About</div>
     <div class="divider"></div>
-    <h2>This reading is for you if<br><em>any of this is true.</em></h2>
-
-    <ul class="check-list">
-      <li>You've built something real — a career, a life, an income — but still can't fully be yourself inside it</li>
-      <li>You're deeply interested in spirituality, esoteric things, and the idea that there's more to this world than what the mainstream is willing to talk about</li>
-      <li>You keep repeating the same patterns in relationships, work, or creative life and can't figure out why</li>
-      <li>You feel like your true expression — how you want to speak, dress, create, connect — is being suppressed by something you can't quite name</li>
-      <li>You've done shadow work, journaling, therapy — and something still isn't moving at the identity level</li>
-      <li>You resonate deeply with certain characters in anime, film, or fiction and wonder what that says about you</li>
-    </ul>
-
-    <p style="color: var(--muted); font-size: 0.9rem; margin-top: 32px;">This reading is not for you if you're looking for vague spiritual guidance or someone to tell you what you want to hear. This work requires a genuine willingness to see clearly.</p>
+    <h2>Why I can do this<br><em>for you.</em></h2>
+    <p>I have a degree in biochemistry and completed graduate level training in naturopathic medicine. I approach this work as a scientist with an open mind — not as mysticism but as applied Jungian psychology through the most precise diagnostic tool I've encountered.</p>
+    <p>Carl Jung identified archetypes as the universal language the subconscious already speaks. Tarot is a map of those archetypes. The reading reveals what years of conventional approaches circle around.</p>
+    <p><strong>I'm scary good at this.</strong> And every reading I do sharpens the gift further.</p>
   </div>
 </div>
 
-<!-- ABOUT -->
-<section class="fade-up" style="text-align: center;">
-  <div class="section-label">About</div>
-  <div class="divider"></div>
-  <h2>Why I can do this<br><em>for you.</em></h2>
-  <p>I have a degree in biochemistry and completed graduate level training in naturopathic medicine. I approach this work as a scientist with an open mind — not as mysticism but as applied Jungian psychology through the most precise diagnostic tool I've encountered.</p>
-  <p>Carl Jung identified archetypes as the universal language the subconscious already speaks. Tarot is a map of those archetypes. When you draw cards you're not summoning anything external — you're allowing your own subconscious to communicate in a language it already knows.</p>
-  <p>I've spent years doing this work on myself — removing the karmic blocks that were suppressing my own expression — and I've built a precise method for doing it for others. <strong>I'm scary good at this.</strong> And the money back guarantee is there because I'm confident enough in that to back it up.</p>
-</section>
-
 <!-- FINAL CTA -->
 <div class="final-cta">
+  <img class="bg-card" src="magician.png" style="width:220px;top:-20px;right:-40px;transform:rotate(10deg);opacity:0.07;position:absolute;border-radius:8px">
+  <img class="bg-card" src="sun.png" style="width:160px;bottom:40px;left:-20px;transform:rotate(-8deg);opacity:0.05;position:absolute;border-radius:8px">
+
   <div class="inner fade-up">
     <div class="section-label">Begin</div>
     <div class="divider"></div>
-    <h2>Your karmic block has a name.<br><em>Find out what it is.</em></h2>
+    <h2>Ready to see clearly?<br><em>Your journey starts here.</em></h2>
+    <p style="font-size:1rem;margin-bottom:8px;">Book a reading and I'll show you exactly where you are on your path — and what your next step looks like.</p>
     <div class="price-display">$55</div>
-    <div class="price-sub">One reading · One area of expression · Delivered to your email</div>
-    <a href="https://calendly.com/naturopathpain/new-meeting" class="btn-primary">Book Your Reading Now</a>
+    <div class="price-sub">One reading · One area of expression · Straight to your email</div>
+    <a href="https://calendly.com/naturopathpain/new-meeting" class="btn-primary">Begin Your Journey</a>
     <div class="urgency">Limited spots available each week</div>
-    <p class="love-note">Check your spam if you don't see the email at the scheduled time. Use an active email address. I love you.</p>
+    <p class="love-note">Check your spam if you don't see the email at the scheduled time. Use an active email. I love you.</p>
   </div>
 </div>
 
 <footer>
-  I AM Method · Archetype Tarot · Expression doesn't require compromise — it requires integration
+  I AM Method · Archetype Tarot · The healer who frees your soul with occult science
 </footer>
 
 <script>
-  // Scroll animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
