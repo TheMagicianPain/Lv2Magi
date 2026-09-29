@@ -1,549 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Private Initiation — The Magician's Path</title>
-<meta name="description" content="A private 30-day initiation to become more of the person you know you are.">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1:1 Identity & Embodiment Work — Magician's Path</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#080705;
-  --panel:#0d0c0a;
-  --panel-2:#11100d;
-  --text:#f2eee7;
-  --text-sub:#b7afa3;
-  --meta:#81786c;
-  --gold:#c7a45a;
-  --gold-soft:#e1c47c;
-  --magenta:#ef1096;
-  --line:rgba(199,164,90,.20);
-  --max:1160px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Inter,Arial,sans-serif;
-  line-height:1.7;
-}
-a{color:inherit;text-decoration:none}
-.container{width:min(var(--max),calc(100% - 40px));margin:auto}
-.cinzel{font-family:Cinzel,serif}
-.eyebrow{
-  color:var(--gold);
-  font:600 12px/1.3 Cinzel,serif;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-}
-h1,h2,h3,h4{font-family:Cinzel,serif;font-weight:500;line-height:1.15;margin:0}
-p{margin:0;color:var(--text-sub)}
-.section{padding:110px 0;border-top:1px solid var(--line)}
-.hero{
-  min-height:92vh;
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 75% 25%,rgba(199,164,90,.12),transparent 30%),
-    radial-gradient(circle at 25% 75%,rgba(239,16,150,.06),transparent 28%);
-}
-.hero:before{
-  content:"";
-  position:absolute;
-  width:650px;height:650px;
-  border:1px solid rgba(199,164,90,.08);
-  border-radius:50%;
-  right:-180px;top:-160px;
-}
-.hero:after{
-  content:"✦";
-  position:absolute;
-  right:15%;top:20%;
-  color:rgba(199,164,90,.22);
-  font-size:100px;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:70px;
-  align-items:center;
-  position:relative;
-  z-index:1;
-}
-.brand{
-  color:var(--gold-soft);
-  font:600 14px Cinzel,serif;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  margin-bottom:42px;
-}
-.hero h1{font-size:clamp(46px,6vw,82px);max-width:820px}
-.hero h1 span{color:var(--gold-soft)}
-.hero-copy{font-size:19px;max-width:650px;margin-top:30px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
-.btn{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  min-height:54px;
-  padding:0 25px;
-  border:1px solid var(--gold);
-  font:600 12px Cinzel,serif;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  transition:.2s ease;
-}
-.btn-primary{background:linear-gradient(90deg,#0d9488,#17bfa9);border-color:#17bfa9;color:#fff}
-.btn-secondary{background:transparent;color:var(--gold-soft)}
-.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
-.hero-note{margin-top:18px;color:var(--meta);font-size:12px}
-.symbol{
-  width:310px;height:310px;margin:auto;
-  border:1px solid rgba(199,164,90,.28);
-  border-radius:50%;
-  display:grid;place-items:center;
-  position:relative;
-}
-.symbol:before,.symbol:after{
-  content:"";
-  position:absolute;
-  inset:24px;
-  border:1px solid rgba(199,164,90,.18);
-  transform:rotate(45deg);
-}
-.symbol:after{transform:rotate(22.5deg)}
-.symbol-core{text-align:center;position:relative;z-index:2}
-.symbol-core .number{font:500 76px Cinzel,serif;color:var(--gold-soft)}
-.symbol-core div:last-child{font:11px Cinzel,serif;letter-spacing:.2em;color:var(--meta)}
-
-.center{text-align:center}
-.section-head{max-width:780px;margin:0 auto 60px}
-.section-head h2{font-size:clamp(34px,4vw,54px);margin-top:14px}
-.section-head p{font-size:17px;margin-top:22px}
-
-.vsl{
-  border:1px solid var(--line);
-  background:var(--panel);
-  min-height:520px;
-  display:grid;
-  place-items:center;
-  text-align:center;
-  padding:40px;
-}
-.vsl-inner{max-width:620px}
-.vsl-mark{font:64px Cinzel,serif;color:var(--gold);opacity:.65;margin-bottom:12px}
-.vsl h3{font-size:30px}
-.vsl p{margin-top:15px}
-
-.problem-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:1px;
-  background:var(--line);
-  border:1px solid var(--line);
-}
-.card{
-  background:var(--panel);
-  padding:30px;
-  min-height:145px;
-}
-.card .num{font:600 12px Cinzel,serif;color:var(--gold);letter-spacing:.12em}
-.card h3{font-size:21px;margin-top:10px}
-.card p{font-size:14px;margin-top:10px}
-
-.model{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  border:1px solid var(--line);
-}
-.model-card{
-  padding:45px 35px;
-  background:var(--panel);
-}
-.model-card+.model-card{border-left:1px solid var(--line)}
-.model-card .symbol-small{font:30px Cinzel,serif;color:var(--gold)}
-.model-card h3{font-size:27px;margin:18px 0 12px}
-
-.story{
-  max-width:820px;
-  margin:auto;
-  border-left:2px solid var(--gold);
-  padding-left:32px;
-}
-.story p{font-size:18px;margin-bottom:22px}
-
-
-.work-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1px;
-  background:var(--line);
-  border:1px solid var(--line);
-}
-.work-card{background:var(--panel);padding:35px}
-.work-card h3{font-size:22px}
-.work-card p{margin-top:12px;font-size:14px}
-
-.steps{max-width:900px;margin:auto}
-.step{
-  display:grid;
-  grid-template-columns:90px 1fr;
-  gap:30px;
-  padding:34px 0;
-  border-bottom:1px solid var(--line);
-}
-.step:first-child{border-top:1px solid var(--line)}
-.step-num{font:500 42px Cinzel,serif;color:var(--gold)}
-.step h3{font-size:25px}
-.step p{margin-top:9px}
-
-.objection-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-}
-.objection{
-  border:1px solid var(--line);
-  background:var(--panel);
-  padding:28px;
-}
-.objection h3{font-size:19px}
-
-.offer{
-  max-width:900px;
-  margin:auto;
-  border:1px solid var(--gold);
-  background:linear-gradient(180deg,rgba(199,164,90,.06),var(--panel));
-  padding:55px;
-}
-.offer h2{font-size:clamp(36px,5vw,58px)}
-.price{font:500 52px Cinzel,serif;color:var(--gold-soft);margin:18px 0 28px}
-.stack{margin:0;padding:0;list-style:none}
-.stack li{
-  padding:15px 0;
-  border-bottom:1px solid var(--line);
-  color:var(--text-sub);
-}
-.stack li:before{content:"✦";color:var(--gold);margin-right:12px}
-.offer-note{font-size:13px;color:var(--meta);margin-top:22px}
-
-.discovery{
-  text-align:center;
-  max-width:700px;
-  margin:auto;
-}
-.discovery h2{font-size:clamp(35px,4vw,52px)}
-.discovery p{font-size:17px;margin:22px auto;max-width:620px}
-.fee{font:500 42px Cinzel,serif;color:var(--gold-soft);margin:22px 0}
-.fine{font-size:12px!important;color:var(--meta)!important}
-
-.final{
-  padding:130px 0;
-  text-align:center;
-  border-top:1px solid var(--line);
-  background:radial-gradient(circle at center,rgba(199,164,90,.08),transparent 45%);
-}
-.final h2{font-size:clamp(42px,6vw,75px);max-width:900px;margin:auto}
-.final p{font-size:18px;max-width:650px;margin:25px auto 35px}
-
-footer{
-  border-top:1px solid var(--line);
-  padding:28px 0;
-  color:var(--meta);
-  font-size:11px;
-  text-align:center;
-  letter-spacing:.08em;
-}
-
-@media(max-width:850px){
-  .hero-grid,.model{grid-template-columns:1fr}
-  .hero{padding:100px 0}
-  .symbol{width:240px;height:240px}
-  .model-card+.model-card{border-left:0;border-top:1px solid var(--line)}
-  .work-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:600px){
-  .container{width:min(100% - 28px,var(--max))}
-  .section{padding:80px 0}
-  .problem-grid,.objection-grid,.work-grid{grid-template-columns:1fr}
-  .offer{padding:32px 24px}
-  .step{grid-template-columns:58px 1fr;gap:18px}
-  .step-num{font-size:32px}
-  .hero-actions .btn{width:100%}
-}
+:root{--bg:#050505;--card:#0d0d0d;--text:#f2eee5;--muted:#aaa39a;--gold:#c7a45a;--gold2:#e0c477;--teal:#0D9488;--teal2:#17bfa9;--line:rgba(199,164,90,.22);--max:1120px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% 0,rgba(13,148,136,.10),transparent 34rem),var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(calc(100% - 36px),var(--max));margin:auto}.eyebrow{color:var(--gold2);text-transform:uppercase;letter-spacing:.2em;font-size:.7rem;font-weight:700}h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.04;margin:0;font-weight:600}h1{font-size:clamp(3rem,7vw,6rem);letter-spacing:-.035em}h2{font-size:clamp(2.4rem,5vw,4.2rem);letter-spacing:-.025em}h3{font-size:1.75rem}p{margin:0;color:var(--muted)}section{padding:96px 0;border-top:1px solid rgba(255,255,255,.06)}
+.hero{padding:80px 0 90px}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}.subtitle{font:clamp(1.5rem,2.7vw,2rem)/1.15 "Cormorant Garamond",serif;color:var(--gold2);margin:22px 0 18px}.hero p{max-width:680px}.cta{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 27px;background:linear-gradient(135deg,var(--teal),var(--teal2));border:1px solid var(--teal2);color:#fff;font-weight:700;transition:.2s}.cta:hover{transform:translateY(-2px);filter:brightness(1.08)}.actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:30px}.secondary{color:var(--gold2);border-bottom:1px solid var(--line);padding-bottom:3px}.micro,.fine{font-size:.76rem;color:#777168;margin-top:11px}
+.art{min-height:390px;display:grid;place-items:center;position:relative}.orb{width:min(360px,75vw);aspect-ratio:1;border:1px solid var(--line);border-radius:50%;background:radial-gradient(circle,rgba(13,148,136,.18),transparent 68%);box-shadow:0 0 90px rgba(13,148,136,.08)}.orb:before,.orb:after{content:"";position:absolute;border:1px solid rgba(199,164,90,.22);border-radius:50%;inset:12%;transform:rotate(45deg)}.orb:after{inset:23%;transform:rotate(-45deg)}.star{position:absolute;color:var(--gold);font-size:5rem}
+.head{max-width:780px;margin-bottom:38px}.head p{margin-top:20px}.video{background:var(--card)}.video-box{aspect-ratio:16/9;border:1px solid var(--line);background:#000;box-shadow:0 25px 80px rgba(0,0,0,.45)}iframe{width:100%;height:100%;border:0}
+.problem{background:linear-gradient(180deg,#070707,#0c0909)}.copy{max-width:900px}.copy p{font-size:1.07rem;margin-top:18px}.emphasis{font:clamp(1.7rem,3vw,2.5rem)/1.2 "Cormorant Garamond",serif;color:var(--text);margin-top:28px!important}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.card{background:var(--card);padding:32px;min-height:220px}.num{color:var(--gold);font:1.35rem "Cormorant Garamond",serif}.card p{margin-top:12px}
+.steps{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}.step{display:grid;grid-template-columns:75px 1fr;gap:25px;background:#0b0b0b;padding:30px}.stepno{color:var(--gold);font:2rem "Cormorant Garamond",serif}.step p{margin-top:7px}
+.bullets{display:grid;grid-template-columns:repeat(2,1fr);gap:15px 35px;padding:0;margin:34px 0 0;list-style:none}.bullets li{position:relative;padding-left:26px;color:#c5c0b7}.bullets li:before{content:"✦";position:absolute;left:0;color:var(--gold)}
+.offer{background:linear-gradient(135deg,rgba(13,148,136,.08),transparent 55%),var(--card)}.offergrid{display:grid;grid-template-columns:1fr 1fr;gap:60px}.price{font:4.2rem/1 "Cormorant Garamond",serif;color:var(--gold2);margin:23px 0}.items{display:grid;gap:13px;margin-top:30px}.item{border:1px solid var(--line);padding:17px 19px}.item strong{display:block;color:var(--text);margin-bottom:3px}.callout{border-left:1px solid var(--teal);padding-left:27px}
+.guarantee{text-align:center;background:#090909}.guaranteein{max-width:820px;margin:auto}.guarantee p{margin-top:19px;font-size:1.06rem}.big{font:clamp(1.8rem,3vw,2.7rem)/1.15 "Cormorant Garamond",serif;color:var(--gold2)!important;margin-top:30px!important}
+.discovery{background:#080808}.discgrid{display:grid;grid-template-columns:1fr .8fr;gap:60px;align-items:center}.callprice{font:3.5rem "Cormorant Garamond",serif;color:var(--gold2);margin:20px 0 8px}.final{text-align:center;padding:115px 0 125px;background:radial-gradient(circle at 50% 0,rgba(13,148,136,.12),transparent 30rem),#050505}.final p{max-width:680px;margin:22px auto 0;font-size:1.06rem}footer{border-top:1px solid rgba(255,255,255,.06);padding:27px 0;text-align:center;color:#666159;font-size:.74rem}
+@media(max-width:850px){.grid,.offergrid,.discgrid{grid-template-columns:1fr}.art{min-height:290px;order:-1}.cards{grid-template-columns:1fr 1fr}.bullets{grid-template-columns:1fr}}
+@media(max-width:560px){.cards{grid-template-columns:1fr}section{padding:74px 0}.wrap{width:min(calc(100% - 28px),var(--max))}}
 </style>
 </head>
-
 <body>
-
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="brand">The Magician's Path — Level 3</div>
-      <div class="eyebrow">Private Initiation</div>
-      <h1>Become More of the Person <span>You Know You Are.</span></h1>
-      <p class="hero-copy">
-        A private 30-day initiation to clarify who you're becoming, remove the patterns
-        keeping you from expressing it, and begin building a life that actually reflects you.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://calendly.com/naturopathpain/discoverycall">Reserve My Discovery Call — $4.44</a>
-        <a class="btn btn-secondary" href="#process">See How It Works</a>
-      </div>
-      <div class="hero-note">Private work · 30 days · $888 Private Initiation</div>
+<header class="hero">
+  <div class="wrap">
+    <div style="max-width:900px;margin:auto;text-align:center">
+      <div class="eyebrow">Magician's Path · Private Work</div>
+      <h1>Become the person you already know you're capable of becoming.</h1>
+      <div class="subtitle">1:1 Identity &amp; Embodiment Work</div>
+      <p>A private session and 30 days of direct support to help you close the gap between who you know yourself to be and how you're actually living, creating, working, and expressing yourself.</p>
     </div>
 
-    <div class="symbol" aria-hidden="true">
-      <div class="symbol-core">
-        <div class="number">III</div>
-        <div>PRIVATE INITIATION</div>
+    <div style="max-width:1000px;margin:42px auto 0">
+      <div class="video-box">
+        <iframe
+          src="https://www.youtube.com/embed/FYDyzp7Me6s?autoplay=1&mute=0&rel=0&playsinline=1"
+          title="1:1 Identity &amp; Embodiment Work"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
       </div>
+
+      <div class="actions" style="justify-content:center;margin-top:25px">
+        <a class="cta" href="https://calendly.com/naturopathpain/discoverycall">Book the $25 Discovery Call →</a>
+      </div>
+      <div class="micro" style="text-align:center">$25 to reserve your call · Attend the call and the $25 is refunded afterward</div>
     </div>
   </div>
-</section>
+</header>
 
-<section class="section" id="vsl">
-  <div class="container">
-    <div class="section-head center">
-      <div class="eyebrow">Before You Enter</div>
-      <h2>Watch This First.</h2>
-      <p>The VSL will explain what Private Initiation is, who it's for, and what we're actually going to work on together.</p>
-    </div>
 
-    <div class="vsl">
-      <div class="vsl-inner">
-        <div class="vsl-mark">III</div>
-        <h3>PRIVATE INITIATION</h3>
-        <p>A private 30-day container for turning the person you're becoming into something you actually express.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">The Real Problem</div>
-      <h2>Your life can be functional and still not feel like yours.</h2>
-      <p>
-        Sometimes the problem isn't that you lack discipline, information, or potential.
-        It's that the identity you're living from isn't the identity you actually want to express.
-      </p>
-    </div>
 
-    <div class="model">
-      <div class="model-card">
-        <div class="symbol-small">I</div>
-        <h3>Identity</h3>
-        <p>Who you believe you are determines what feels possible, desirable, and natural to you.</p>
-      </div>
-      <div class="model-card">
-        <div class="symbol-small">II</div>
-        <h3>Direction</h3>
-        <p>Your energy needs somewhere to go. Direction turns potential into attention, intention, and action.</p>
-      </div>
-      <div class="model-card">
-        <div class="symbol-small">III</div>
-        <h3>Expression</h3>
-        <p>The identity becomes visible through your work, relationships, appearance, words, choices, and life.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">You May Recognize Yourself Here</div>
-      <h2>The ten problems underneath the surface.</h2>
-    </div>
+<section class="problem"><div class="wrap"><div class="head"><div class="eyebrow">The gap</div><h2>You may not need more information.</h2></div><div class="copy"><p>You can know exactly what you want and still find yourself living in ways that don't reflect it.</p><p>You can know you're creative but keep holding yourself back. Know you want to build something but keep hiding. Know you want to be visible but constantly edit yourself down.</p><p>You can know the person you're becoming and still wake up every day operating as someone else.</p><p class="emphasis">The problem isn't necessarily a lack of potential. It's the gap between your internal identity and your external expression.</p><p>That's the gap we work on together.</p></div></div></section>
 
-    <div class="problem-grid">
-      <div class="card"><div class="num">01</div><h3>I know I'm capable of more.</h3></div>
-      <div class="card"><div class="num">02</div><h3>I don't know what I actually want.</h3></div>
-      <div class="card"><div class="num">03</div><h3>I'm afraid to be seen.</h3></div>
-      <div class="card"><div class="num">04</div><h3>My public identity feels wrong.</h3></div>
-      <div class="card"><div class="num">05</div><h3>I keep starting and stopping.</h3></div>
-      <div class="card"><div class="num">06</div><h3>I have ideas but no expression.</h3></div>
-      <div class="card"><div class="num">07</div><h3>My content doesn't feel like me.</h3></div>
-      <div class="card"><div class="num">08</div><h3>I want a different life.</h3></div>
-      <div class="card"><div class="num">09</div><h3>I care too much what people think.</h3></div>
-      <div class="card"><div class="num">10</div><h3>I can see the person I want to become.</h3></div>
-    </div>
-  </div>
-</section>
+<section><div class="wrap"><div class="head"><div class="eyebrow">The framework</div><h2>Identity → Direction → Expression → Embodiment</h2><p>The work is about turning an internal sense of who you're becoming into decisions, behavior, and an actual life that reflects it.</p></div><div class="cards">
+<div class="card"><div class="num">01</div><h3>Identity</h3><p>Who are you actually becoming? What does that person value, create, tolerate, and prioritize?</p></div>
+<div class="card"><div class="num">02</div><h3>Direction</h3><p>What does that identity require you to change, stop, start, or prioritize?</p></div>
+<div class="card"><div class="num">03</div><h3>Expression</h3><p>How does the person you're becoming show up in your work, creativity, relationships, appearance, and public presence?</p></div>
+<div class="card"><div class="num">04</div><h3>Embodiment</h3><p>What do you practice repeatedly until the identity becomes a familiar way of living rather than an idea?</p></div>
+</div></div></section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">My Story</div>
-      <h2>FROM INHERITED IDENTITY TO EXPRESSED IDENTITY.</h2>
-    </div>
+<section><div class="wrap"><div class="head"><div class="eyebrow">What we actually do</div><h2>One session. Then 30 days of implementation.</h2></div><div class="steps">
+<div class="step"><div class="stepno">01</div><div><h3>Identify the identity</h3><p>We get specific about the person you're trying to become—not just what you want to accomplish.</p></div></div>
+<div class="step"><div class="stepno">02</div><div><h3>Find the gap</h3><p>We look at where your current life, behavior, environment, or expression isn't matching that identity.</p></div></div>
+<div class="step"><div class="stepno">03</div><div><h3>Choose the highest-leverage changes</h3><p>We determine what actually needs to change so you're not trying to rebuild your entire life at once.</p></div></div>
+<div class="step"><div class="stepno">04</div><div><h3>Embody it</h3><p>You take the work into your actual life—and you have a direct line to me while you're doing it.</p></div></div>
+</div></div></section>
 
-    <div class="story">
-      <p>
-        Private Initiation exists for the point where understanding yourself is no longer enough.
-        You know there is more in you. The work now is to make that identity visible through
-        what you create, choose, say, build, and do.
-      </p>
-    </div>
-  </div>
-</section>
+<section><div class="wrap"><div class="head"><div class="eyebrow">This is for you if</div><h2>You can feel the next version of yourself.</h2><p>You just haven't built the structure to live as them consistently.</p></div><ul class="bullets">
+<li>You already know there's another version of yourself in there.</li><li>You're tired of consuming information without implementing it.</li><li>You want to become more visible publicly.</li><li>You want your personal brand or creative work to reflect who you actually are.</li><li>You're going through a major transition and need direction.</li><li>You know what you want but can't seem to organize your life around it.</li><li>You want to change how you express yourself.</li><li>You're willing to actually do the work.</li>
+</ul><p style="margin-top:30px;max-width:700px">If you're looking for someone to simply tell you what to do, this probably isn't the right thing. The work requires your participation.</p></div></section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">What We Can Work On</div>
-      <h2>Your identity has to become real somewhere.</h2>
-      <p>
-        Private Initiation isn't about fitting you into one career or one lifestyle.
-        We work on the arena where your identity needs to become more fully expressed.
-      </p>
-    </div>
+<section class="offer" id="offer"><div class="wrap offergrid"><div><div class="eyebrow">The offer</div><h2>1:1 Identity &amp; Embodiment Work</h2><div class="price">$888</div><p>The session gives us the direction. The next 30 days give you a place to actually work through it.</p><div class="items">
+<div class="item"><strong>One private 1:1 session</strong>A deep examination of your identity, current life, obstacles, and desired direction.</div>
+<div class="item"><strong>30 days of direct support</strong>A direct line to me through the Inner Circle while you're implementing the work.</div>
+<div class="item"><strong>Inner Circle access</strong>Community, discussion, and the full library available during your 30 days.</div>
+<div class="item"><strong>Direct questions &amp; feedback</strong>Bring questions, decisions, ideas, creative work, content, personal-brand questions, or challenges into the conversation.</div>
+</div></div><div class="callout"><h3>This isn't 30 days of unlimited calls.</h3><p>It's 30 days of having a direct line to me while you're actually implementing the work. You can message me through the community, ask questions, get feedback, and use the support to keep the work moving.</p><p style="margin-top:20px">The goal isn't simply to give you more information. <strong style="color:var(--text)">The goal is to help your actual life begin reflecting the identity you're choosing.</strong></p></div></div></section>
 
-    <div class="work-grid">
-      <div class="work-card"><h3>Music & Art</h3><p>Bring me the work you're making, the ideas you're sitting on, and the expression you're trying to find.</p></div>
-      <div class="work-card"><h3>Personal Brand</h3><p>Clarify your point of view, voice, aesthetic, and the identity you want people to encounter.</p></div>
-      <div class="work-card"><h3>Public Expression</h3><p>Become more comfortable allowing the person you are privately to exist publicly.</p></div>
-      <div class="work-card"><h3>Career & Ambition</h3><p>Use the person you're becoming as a filter for decisions about work, direction, and opportunity.</p></div>
-      <div class="work-card"><h3>Relationships</h3><p>Examine the identities you're bringing into relationships and the standards, boundaries, and expression that follow.</p></div>
-      <div class="work-card"><h3>Execution</h3><p>Stop keeping the identity theoretical. Choose something meaningful and actually express it.</p></div>
-    </div>
-  </div>
-</section>
+<section class="guarantee"><div class="wrap guaranteein"><div class="eyebrow">The 30-Day Identity Guarantee</div><h2>If you don't feel the difference, you don't keep the investment.</h2><p>At the beginning of our work, we'll identify the person you're trying to become and what that identity actually looks like in your life.</p><p>We'll spend the next 30 days working toward it.</p><p class="big">If, at the end of those 30 days, you genuinely don't feel more like the person you wanted to become when we started, I'll give you a full refund.</p><p>The full guarantee terms and refund process are provided before purchase.</p></div></section>
 
-<section class="section" id="process">
-  <div class="container">
-    <div class="section-head center">
-      <div class="eyebrow">The 30-Day Initiation</div>
-      <h2>We don't just talk about who you're becoming.</h2>
-      <p>We create a practical container for you to begin expressing it.</p>
-    </div>
+<section class="discovery"><div class="wrap discgrid"><div><div class="eyebrow">The first step</div><h2>Let's see if we're actually a fit.</h2><p style="margin-top:22px">Before you invest $888, we'll have a conversation about where you are, what you're trying to change, and whether I genuinely think I can help.</p><p style="margin-top:18px">The call is a seriousness filter—not a separate coaching product.</p></div><div><div class="callprice">$25</div><p>Reserve your discovery call for $25. Attend the scheduled call and the $25 is refunded afterward.</p><div class="fine">The refund is issued after the attended call. See the booking and refund terms for details.</div><div class="actions"><a class="cta" href="https://calendly.com/naturopathpain/discoverycall">Book the Discovery Call →</a></div></div></div></section>
 
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div><h3>Private Identity Session</h3><p>We identify the person you're becoming, the identity you're currently operating from, and the gap between them.</p></div>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div><h3>Identify the Blockages</h3><p>We examine the inherited patterns, assumptions, fears, and identities that keep showing up.</p></div>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div><h3>Choose the Arena</h3><p>We decide where the identity needs to become visible: your work, art, brand, relationships, appearance, career, or another meaningful area.</p></div>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div><h3>Run the Identity Experiment</h3><p>You take concrete action for 30 days. The goal is expression, evidence, feedback, and movement—not endless analysis.</p></div>
-      </div>
-      <div class="step">
-        <div class="step-num">05</div>
-        <div><h3>Direct Access</h3><p>For 30 days, you have direct access to me as you implement, encounter resistance, and make decisions.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Questions You May Have</div>
-      <h2>Before you decide.</h2>
-    </div>
-
-    <div class="objection-grid">
-      <div class="objection"><h3>What if I don't know who I'm becoming?</h3><p style="margin-top:14px;color:var(--text-sub);font-size:14px;">You don't need a perfectly defined identity before starting. Part of the work is discovering what becomes clearer when you stop organizing your life around identities that no longer fit.</p></div>
-      <div class="objection"><h3>What if 30 days isn't enough?</h3><p style="margin-top:14px;color:var(--text-sub);font-size:14px;">Thirty days isn't meant to finish your transformation. It's a focused initiation: clarify the direction, begin the experiment, create evidence, and establish momentum you can continue after the container ends.</p></div>
-      <div class="objection"><h3>What if I already know what I want?</h3><p style="margin-top:14px;color:var(--text-sub);font-size:14px;">Then we can spend less time on discovery and more time on expression and execution—turning what you already know into decisions, work, and action.</p></div>
-      <div class="objection"><h3>Is this therapy?</h3><p style="margin-top:14px;color:var(--text-sub);font-size:14px;">No. Private Initiation is coaching and personal development focused on identity, expression, decisions, and execution. It is not a substitute for licensed mental-health treatment.</p></div>
-      <div class="objection"><h3>What if I don't have a personal brand?</h3><p style="margin-top:14px;color:var(--text-sub);font-size:14px;">You don't need one. Personal branding is only one possible arena. The work can apply to your career, art, relationships, appearance, lifestyle, or any other area where you want to express yourself more deliberately.</p></div>
-      <div class="objection"><h3>What if I'm a musician or artist?</h3><p style="margin-top:14px;color:var(--text-sub);font-size:14px;">That's absolutely within the scope. Bring the music, art, ideas, or unfinished work you're trying to express. The goal is not to turn you into a particular kind of artist; it's to help your work become more aligned with the person you're becoming.</p></div>
-      <div class="objection"><h3>What if I don't want to be an influencer?</h3><p style="margin-top:14px;color:var(--text-sub);font-size:14px;">You don't have to be. Public expression does not mean becoming an influencer. This is about living and expressing your chosen identity more deliberately, whether that happens online or privately.</p></div>
-      <div class="objection"><h3>Why do I need direct access to you?</h3><p style="margin-top:14px;color:var(--text-sub);font-size:14px;">Because implementation creates questions that a static course can't answer. Direct access gives you a place to bring decisions, resistance, work-in-progress, and real situations while you're actually changing.</p></div>
-      <div class="objection"><h3>Why does it cost $888?</h3><p style="margin-top:14px;color:var(--text-sub);font-size:14px;">Private Initiation is deliberately limited to a small number of people because it includes private 1:1 work, 30 days of direct access, and a personal implementation container rather than a self-guided product.</p></div>
-      <div class="objection">
-        <h3>Why is there a $4.44 discovery call?</h3>
-        <p style="margin-top:14px;color:var(--text-sub);font-size:14px;">
-          The call is intentionally a seriousness filter. The $4.44 fee is non-refundable
-          and is not credited toward the $888 Private Initiation.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="offer">
-      <div class="eyebrow">Private Initiation — Level 3</div>
-      <h2>One private month of focused transformation.</h2>
-      <div class="price">$888</div>
-
-      <ul class="stack">
-        <li>One private 1:1 Identity Session</li>
-        <li>30 days of direct access</li>
-        <li>30 days inside the Inner Circle</li>
-        <li>Full Inner Circle library + community access during the initiation</li>
-        <li>A 30-Day Identity Experiment</li>
-        <li>Direct feedback as you implement and express the identity</li>
-      </ul>
-
-      <p class="offer-note">
-        Pay in full or use the available payment plan. Minimum $333 down.
-        The product and access remain the same; support continues while payments are active.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://calendly.com/naturopathpain/discoverycall">Reserve My Discovery Call</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="discovery">
-  <div class="container">
-    <div class="discovery">
-      <div class="eyebrow">First Step</div>
-      <h2>Private Initiation — Discovery Call</h2>
-      <p>
-        This is a paid conversation for people seriously considering Private Initiation.
-        We'll discuss where you are, who you're becoming, what you want to change,
-        and whether this is the right container for that work.
-      </p>
-      <div class="fee">$4.44</div>
-      <a class="btn btn-primary" href="https://calendly.com/naturopathpain/discoverycall">Reserve My Discovery Call — $4.44</a>
-      <p class="fine">
-        The $4.44 discovery call is non-refundable and is not credited toward the $888 Private Initiation.
-        If there is a fit, we'll discuss the next step.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="final">
-  <div class="container">
-    <div class="eyebrow">The Magician's Path — Level 3</div>
-    <h2>Stop imagining the person you're becoming. Start expressing them.</h2>
-    <p>
-      You don't need another year of thinking about what your life could look like.
-      You need a place to begin making the identity real.
-    </p>
-    <a class="btn btn-primary" href="https://calendly.com/naturopathpain/discoverycall">Reserve My Discovery Call — $4.44</a>
-  </div>
-</section>
-
-<footer>
-  THE MAGICIAN'S PATH · PRIVATE INITIATION · LEVEL III
-</footer>
-
+<section class="final"><div class="wrap"><div class="eyebrow">Magician's Path · 1:1 Work</div><h2>You already have an idea of who you're becoming.</h2><h2 style="color:var(--gold2);margin-top:9px">At some point, you have to start living as them.</h2><p>If you think working together could help you close that gap, book the discovery call and let's find out.</p><div class="actions" style="justify-content:center"><a class="cta" href="https://calendly.com/naturopathpain/discoverycall">Book the $25 Discovery Call →</a></div><div class="micro">$25 to reserve · Refunded after you attend the call</div></div></section>
+<footer>Magician's Path · 1:1 Identity &amp; Embodiment Work</footer>
 </body>
 </html>
