@@ -7,514 +7,180 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
 :root{
-  --bg:#050505;
-  --surface:#0d0f12;
-  --surface2:#11151a;
-  --text:#fff;
-  --muted:#c8cdd4;
-  --soft:#969da7;
-  --teal:#00d6c2;
-  --teal2:#19f5df;
-  --gold:#ffd45a;
-  --gold2:#ffe58a;
-  --pink:#ff3da8;
-  --line:rgba(255,255,255,.11);
-  --max:900px;
+  --bg:#050505;--surface:#0d0f12;--surface2:#11151a;
+  --text:#fff;--muted:#c8cdd4;--soft:#969da7;
+  --teal:#00d6c2;--teal2:#19f5df;--gold:#ffd45a;--gold2:#ffe58a;
+  --pink:#ff3da8;--line:rgba(255,255,255,.11);--max:900px;
 }
-
 *{box-sizing:border-box}
-
 html{scroll-behavior:smooth}
-
 body{
-  margin:0;
-  background:
-    radial-gradient(circle at 50% 0,rgba(0,214,194,.10),transparent 34rem),
-    var(--bg);
-  color:var(--text);
+  margin:0;background:
+  radial-gradient(circle at 50% 0,rgba(0,214,194,.10),transparent 34rem),
+  var(--bg);color:var(--text);
   font:18px/1.75 Inter,system-ui,sans-serif;
 }
-
-a{
-  color:inherit;
-  text-decoration:none
-}
-
-.wrap{
-  width:min(calc(100% - 42px),var(--max));
-  margin:auto
-}
-
-section{
-  padding:125px 0;
-  border-top:1px solid var(--line)
-}
-
-h1,h2,h3{
-  font-family:"Cormorant Garamond",Georgia,serif;
-  line-height:1.02;
-  margin:0;
-  font-weight:600
-}
-
-h1{
-  font-size:clamp(3.5rem,8vw,6.8rem);
-  letter-spacing:-.04em
-}
-
-h2{
-  font-size:clamp(2.8rem,6vw,4.8rem);
-  letter-spacing:-.03em
-}
-
-h3{
-  font-size:2rem
-}
-
-p{
-  margin:0;
-  color:var(--muted)
-}
-
+a{color:inherit;text-decoration:none}
+.wrap{width:min(calc(100% - 42px),var(--max));margin:auto}
+section{padding:125px 0;border-top:1px solid var(--line)}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.02;margin:0;font-weight:600}
+h1{font-size:clamp(3.5rem,8vw,6.8rem);letter-spacing:-.04em}
+h2{font-size:clamp(2.8rem,6vw,4.8rem);letter-spacing:-.03em}
+h3{font-size:2rem}
+p{margin:0;color:var(--muted)}
 .eyebrow{
-  color:var(--teal2);
-  text-transform:uppercase;
-  letter-spacing:.22em;
-  font-size:.76rem;
-  font-weight:800;
-  margin-bottom:22px
+  color:var(--teal2);text-transform:uppercase;letter-spacing:.22em;
+  font-size:.76rem;font-weight:800;margin-bottom:22px
 }
-
-.lead{
-  font-size:1.18rem;
-  line-height:1.85
-}
-
-.center{
-  text-align:center
-}
-
-.hero{
-  padding:110px 0 100px;
-  text-align:center
-}
-
-.hero h1{
-  max-width:820px;
-  margin:auto
-}
-
+.lead{font-size:1.18rem;line-height:1.85}
+.center{text-align:center}
+.hero{padding:110px 0 100px;text-align:center}
+.hero h1{max-width:820px;margin:auto}
 .hero .sub{
-  color:var(--gold2);
-  font:clamp(1.7rem,3vw,2.25rem)/1.2 "Cormorant Garamond",serif;
+  color:var(--gold2);font:clamp(1.7rem,3vw,2.25rem)/1.2 "Cormorant Garamond",serif;
   margin:28px auto 22px
 }
-
-.hero .lead{
-  max-width:740px;
-  margin:0 auto
-}
-
-.video-wrap{
-  max-width:900px;
-  margin:58px auto 0
-}
-
-.video-box{
-  aspect-ratio:16/9;
-  background:#000;
-  border:1px solid rgba(255,255,255,.14);
-  box-shadow:0 30px 90px rgba(0,0,0,.5)
-}
-
-iframe{
-  width:100%;
-  height:100%;
-  border:0
-}
-
-.actions{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-top:30px
-}
-
+.hero .lead{max-width:740px;margin:0 auto}
+.video-wrap{max-width:900px;margin:58px auto 0}
+.video-box{aspect-ratio:16/9;background:#000;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 90px rgba(0,0,0,.5)}
+iframe{width:100%;height:100%;border:0}
+.actions{display:flex;justify-content:center;align-items:center;margin-top:30px}
 .cta{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:64px;
-  padding:0 38px;
-  border-radius:10px;
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:64px;padding:0 38px;border-radius:10px;
   background:linear-gradient(135deg,var(--teal),var(--teal2));
-  color:#03110f;
-  font-weight:800;
-  letter-spacing:.02em;
+  color:#03110f;font-weight:800;letter-spacing:.02em;
   box-shadow:0 15px 45px rgba(0,214,194,.18);
   transition:.2s
 }
-
-.cta:hover{
-  transform:translateY(-3px);
-  filter:brightness(1.07);
-  box-shadow:0 20px 55px rgba(0,214,194,.28)
-}
-
-.micro{
-  font-size:.86rem;
-  color:#7e858e;
-  margin-top:13px;
-  text-align:center
-}
-
-.head{
-  max-width:780px;
-  margin:0 auto 60px;
-  text-align:center
-}
-
-.head p{
-  margin-top:25px
-}
-
-.copy{
-  max-width:760px;
-  margin:auto;
-  text-align:center
-}
-
-.copy p{
-  margin:0 auto 30px
-}
-
+.cta:hover{transform:translateY(-3px);filter:brightness(1.07);box-shadow:0 20px 55px rgba(0,214,194,.28)}
+.micro{font-size:.86rem;color:#7e858e;margin-top:13px;text-align:center}
+.head{max-width:780px;margin:0 auto 60px;text-align:center}
+.head p{margin-top:25px}
+.copy{max-width:760px;margin:auto;text-align:center}
+.copy p{margin:0 auto 30px}
 .emphasis{
   max-width:760px!important;
   color:#fff!important;
   font:clamp(2rem,4vw,3rem)/1.2 "Cormorant Garamond",serif!important;
   margin:48px auto!important
 }
-
-.story{
-  background:linear-gradient(180deg,#080909,#050505)
-}
-
+.story{background:linear-gradient(180deg,#080909,#050505)}
 .quote{
-  max-width:760px;
-  margin:55px auto 0;
-  padding:32px 28px;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  color:#fff;
-  font:clamp(1.8rem,4vw,3rem)/1.25 "Cormorant Garamond",serif
+  max-width:760px;margin:55px auto 0;padding:32px 28px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  color:#fff;font:clamp(1.8rem,4vw,3rem)/1.25 "Cormorant Garamond",serif
 }
-
-.quote span{
-  color:var(--gold2)
-}
-
-.model{
-  max-width:780px;
-  margin:auto
-}
-
+.quote span{color:var(--gold2)}
+.model{max-width:780px;margin:auto}
 .model-step{
-  padding:34px 0;
-  border-bottom:1px solid var(--line);
-  text-align:center
+  padding:34px 0;border-bottom:1px solid var(--line);text-align:center
 }
-
-.model-step:last-child{
-  border-bottom:0
-}
-
-.num{
-  color:var(--gold);
-  font-weight:800;
-  letter-spacing:.12em;
-  font-size:.78rem
-}
-
-.model-step h3{
-  margin:10px 0 8px
-}
-
-.model-step p{
-  max-width:650px;
-  margin:auto
-}
-
+.model-step:last-child{border-bottom:0}
+.num{color:var(--gold);font-weight:800;letter-spacing:.12em;font-size:.78rem}
+.model-step h3{margin:10px 0 8px}
+.model-step p{max-width:650px;margin:auto}
 .example{
-  margin:55px auto 0;
-  max-width:760px;
-  padding:38px 34px;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(0,214,194,.07),
-      rgba(255,61,168,.035)
-    );
-  border:1px solid var(--line);
-  border-radius:18px;
-  text-align:center
+  margin:55px auto 0;max-width:760px;padding:38px 34px;
+  background:linear-gradient(145deg,rgba(0,214,194,.07),rgba(255,61,168,.035));
+  border:1px solid var(--line);border-radius:18px;text-align:center
 }
-
-.example .label{
-  color:var(--teal2);
-  font-size:.74rem;
-  font-weight:800;
-  letter-spacing:.18em;
-  text-transform:uppercase
-}
-
-.example h3{
-  margin:14px 0
-}
-
+.example .label{color:var(--teal2);font-size:.74rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.example h3{margin:14px 0}
 .three{
-  max-width:780px;
-  margin:auto
+  max-width:780px;margin:auto
 }
-
 .practice{
-  padding:36px 0;
-  border-bottom:1px solid var(--line);
-  text-align:center
+  padding:36px 0;border-bottom:1px solid var(--line);text-align:center
 }
-
-.practice:last-child{
-  border-bottom:0
-}
-
-.practice h3{
-  margin:10px 0
-}
-
-.practice strong{
-  color:#fff
-}
-
+.practice:last-child{border-bottom:0}
+.practice h3{margin:10px 0}
+.practice strong{color:#fff}
 .initiation{
-  background:
-    radial-gradient(
-      circle at 50% 0,
-      rgba(255,212,90,.07),
-      transparent 30rem
-    ),
-    #080808
+  background:radial-gradient(circle at 50% 0,rgba(255,212,90,.07),transparent 30rem),#080808;
 }
-
-.initiation-copy{
-  max-width:780px;
-  margin:auto;
-  text-align:center
-}
-
+.initiation-copy{max-width:780px;margin:auto;text-align:center}
 .process{
-  max-width:760px;
-  margin:55px auto 0;
+  max-width:760px;margin:55px auto 0;
   border-top:1px solid var(--line)
 }
-
 .process-row{
-  padding:28px 0;
-  border-bottom:1px solid var(--line);
+  padding:28px 0;border-bottom:1px solid var(--line);
   text-align:center
 }
-
-.process-row strong{
-  display:block;
-  color:#fff;
-  font-size:1.15rem;
-  margin-bottom:5px
-}
-
-.process-row p{
-  font-size:1rem
-}
-
+.process-row strong{display:block;color:#fff;font-size:1.15rem;margin-bottom:5px}
+.process-row p{font-size:1rem}
 .offer{
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,214,194,.06),
-      transparent 55%
-    ),
-    #080a0c
+  background:linear-gradient(180deg,rgba(0,214,194,.06),transparent 55%),#080a0c;
 }
-
 .offer-box{
-  max-width:780px;
-  margin:auto;
-  text-align:center
+  max-width:780px;margin:auto;text-align:center
 }
-
 .price{
   font:clamp(4rem,8vw,6.5rem)/1 "Cormorant Garamond",serif;
-  color:var(--gold2);
-  margin:25px 0 12px
+  color:var(--gold2);margin:25px 0 12px
 }
-
 .stack{
-  max-width:760px;
-  margin:48px auto 0;
-  text-align:center
+  max-width:760px;margin:48px auto 0;text-align:center
 }
-
 .stack-item{
-  padding:27px 20px;
-  border-top:1px solid var(--line)
+  padding:27px 20px;border-top:1px solid var(--line)
 }
-
-.stack-item:last-child{
-  border-bottom:1px solid var(--line)
-}
-
-.stack-item strong{
-  display:block;
-  color:#fff;
-  font-size:1.2rem;
-  margin-bottom:6px
-}
-
-.stack-item p{
-  font-size:1rem
-}
-
+.stack-item:last-child{border-bottom:1px solid var(--line)}
+.stack-item strong{display:block;color:#fff;font-size:1.2rem;margin-bottom:6px}
+.stack-item p{font-size:1rem}
 .not{
-  margin:38px auto 0;
-  max-width:680px;
-  color:var(--soft);
-  font-size:.96rem
+  margin:38px auto 0;max-width:680px;color:var(--soft);font-size:.96rem
 }
-
 .guidance{
-  max-width:720px;
-  margin:60px auto 0;
-  padding:35px 30px;
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:16px;
-  text-align:center;
-  background:rgba(255,255,255,.025)
+  max-width:720px;margin:60px auto 0;padding:35px 30px;
+  border:1px solid rgba(255,255,255,.10);border-radius:16px;
+  text-align:center;background:rgba(255,255,255,.025)
 }
-
-.guidance .eyebrow{
-  color:var(--gold2);
-  margin-bottom:12px
-}
-
-.objections{
-  background:#060707
-}
-
-.objection{
-  max-width:760px;
-  margin:0 auto;
-  padding:38px 0;
-  border-bottom:1px solid var(--line);
-  text-align:center
-}
-
-.objection:last-child{
-  border-bottom:0
-}
-
-.objection h3{
-  margin-bottom:12px
-}
-
-.objection p{
-  font-size:1.03rem
-}
-
-.guarantee{
-  text-align:center
-}
-
+.guidance .eyebrow{color:var(--gold2);margin-bottom:12px}
+.objections{background:#060707}
+.objection{max-width:760px;margin:0 auto;padding:38px 0;border-bottom:1px solid var(--line);text-align:center}
+.objection:last-child{border-bottom:0}
+.objection h3{margin-bottom:12px}
+.objection p{font-size:1.03rem}
+.guarantee{text-align:center}
 .guarantee-box{
-  max-width:760px;
-  margin:auto;
-  padding:45px 32px;
-  border:1px solid rgba(255,212,90,.28);
-  background:rgba(255,212,90,.035)
+  max-width:760px;margin:auto;padding:45px 32px;
+  border:1px solid rgba(255,212,90,.28);background:rgba(255,212,90,.035)
 }
-
-.guarantee-box h2{
-  font-size:clamp(2.4rem,5vw,4rem)
-}
-
+.guarantee-box h2{font-size:clamp(2.4rem,5vw,4rem)}
 .final{
-  text-align:center;
-  padding:145px 0 155px;
-  background:
-    radial-gradient(
-      circle at 50% 0,
-      rgba(0,214,194,.12),
-      transparent 32rem
-    ),
-    #050505
+  text-align:center;padding:145px 0 155px;
+  background:radial-gradient(circle at 50% 0,rgba(0,214,194,.12),transparent 32rem),#050505
 }
-
-.final p{
-  max-width:680px;
-  margin:28px auto 0
-}
-
-.final .cta{
-  margin-top:34px
-}
-
-footer{
-  padding:28px;
-  text-align:center;
-  color:#666d76;
-  border-top:1px solid var(--line);
-  font-size:.75rem;
-  letter-spacing:.06em
-}
-
+.final p{max-width:680px;margin:28px auto 0}
+.final .cta{margin-top:34px}
+.cta{flex-direction:column;gap:3px;text-align:center;line-height:1.25}
+.cta-label{display:block}
+.cta-timer{display:block;font-size:.76rem;font-weight:700;letter-spacing:.07em;opacity:.9;font-variant-numeric:tabular-nums}
+.cta-timer .timer-value{font-weight:900;letter-spacing:.1em}
+.price-note{font-size:.9rem;color:var(--muted);margin-top:8px}
+.old-price{text-decoration:line-through;color:var(--soft);font:1.1rem Inter,system-ui,sans-serif;margin-right:12px;vertical-align:middle}
+footer{padding:28px;text-align:center;color:#666d76;border-top:1px solid var(--line);font-size:.75rem;letter-spacing:.06em}
 @media(max-width:600px){
-  body{
-    font-size:17px
-  }
-
-  section{
-    padding:95px 0
-  }
-
-  .hero{
-    padding:85px 0 80px
-  }
-
-  .wrap{
-    width:min(calc(100% - 30px),var(--max))
-  }
-
-  .cta{
-    width:100%;
-    padding:0 20px
-  }
+  body{font-size:17px}
+  section{padding:95px 0}
+  .hero{padding:85px 0 80px}
+  .wrap{width:min(calc(100% - 30px),var(--max))}
+  .cta{width:100%;padding:0 20px}
 }
 </style>
 </head>
-
 <body>
+
 
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">The Magician's Path · Private Work</div>
-
-    <h1>
-      Become the person you've always known you're capable of becoming.
-    </h1>
-
-    <div class="sub">
-      A 1:1 Identity Change Initiation
-    </div>
-
+    <h1>Become the person you've always known you're capable of becoming.</h1>
+    <div class="sub">A 1:1 Identity Change Initiation</div>
     <p class="lead">
       You may not have an information problem. You may have an identity problem.
       This is a focused private session designed to help you identify the old identity,
@@ -533,75 +199,34 @@ footer{
     </div>
 
     <div class="actions">
-      <a
-        class="cta"
-        href="https://calendly.com/naturopathpain/1v1">
-        BOOK YOUR PRIVATE SESSION — $333 →
-      </a>
+      <a class="cta" href="https://calendly.com/naturopathpain/1v1"><span class="cta-label">BOOK YOUR PRIVATE SESSION — $333 →</span><span class="cta-timer" data-countdown-line>PRICE INCREASE IN <span class="timer-value" data-timer-value>24:00:00</span></span></a>
     </div>
-
-    <div class="micro">
-      60 minutes · personalized identity work · book directly
-    </div>
+    <div class="micro">60 minutes · personalized identity work · book directly</div>
   </div>
 </header>
-
 
 <section class="story">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">The problem</div>
-
-      <h2>
-        You can know exactly what you want and still keep living like someone else.
-      </h2>
+      <h2>You can know exactly what you want and still keep living like someone else.</h2>
     </div>
-
     <div class="copy">
-      <p>
-        You can be deeply self-aware and still repeat the same patterns.
-      </p>
-
-      <p>
-        You can read the books, listen to the podcasts, study spirituality,
-        go to therapy, learn more—and still not see that knowledge flow into a new reality.
-      </p>
-
-      <p>
-        You can know you're creative but keep holding yourself back.
-        Know you want to build something but keep hiding.
-        Know you want to be visible but constantly edit yourself down.
-      </p>
-
-      <p>
-        You can have multiple interests, enormous clarity, and real ambition
-        while still being unable to organize your life around the person
-        you know you're becoming.
-      </p>
-
-      <p class="emphasis">
-        The problem may not be your potential.<br>
-        It may be the identity you're still operating from.
-      </p>
-
-      <p>
-        That's the gap this work is designed to close.
-      </p>
+      <p>You can be deeply self-aware and still repeat the same patterns.</p>
+      <p>You can read the books, listen to the podcasts, study spirituality, go to therapy, learn more—and still not see that knowledge flow into a new reality.</p>
+      <p>You can know you're creative but keep holding yourself back. Know you want to build something but keep hiding. Know you want to be visible but constantly edit yourself down.</p>
+      <p>You can have multiple interests, enormous clarity, and real ambition while still being unable to organize your life around the person you know you're becoming.</p>
+      <p class="emphasis">The problem may not be your potential.<br>It may be the identity you're still operating from.</p>
+      <p>That's the gap this work is designed to close.</p>
     </div>
   </div>
 </section>
 
-
 <section>
   <div class="wrap">
-
     <div class="head">
       <div class="eyebrow">The mechanism</div>
-
-      <h2>
-        Information isn't the problem. Identity is.
-      </h2>
-
+      <h2>Information isn't the problem. Identity is.</h2>
       <p class="lead">
         Your identity influences what you believe is possible, what you tolerate,
         where you direct your energy, and what you repeatedly express.
@@ -609,71 +234,41 @@ footer{
     </div>
 
     <div class="model">
-
       <div class="model-step">
         <div class="num">01 · IDENTITY</div>
         <h3>Who are you?</h3>
-        <p>
-          The story you hold about yourself determines what feels natural,
-          safe, possible, or impossible.
-        </p>
+        <p>The story you hold about yourself determines what feels natural, safe, possible, or impossible.</p>
       </div>
-
       <div class="model-step">
         <div class="num">02 · DIRECTION</div>
         <h3>Where does your energy go?</h3>
-        <p>
-          Your identity shapes what you pursue, avoid, prioritize,
-          protect, and pay attention to.
-        </p>
+        <p>Your identity shapes what you pursue, avoid, prioritize, protect, and pay attention to.</p>
       </div>
-
       <div class="model-step">
         <div class="num">03 · EXPRESSION</div>
         <h3>What do you repeatedly do?</h3>
-        <p>
-          Your actions and environment become evidence for the identity you're living.
-        </p>
+        <p>Your actions and environment become evidence for the identity you're living.</p>
       </div>
-
       <div class="model-step">
         <div class="num">04 · EMBODIMENT</div>
         <h3>What becomes normal?</h3>
-        <p>
-          Repeated expression raises your baseline until the new way of being becomes familiar.
-        </p>
+        <p>Repeated expression raises your baseline until the new way of being becomes familiar.</p>
       </div>
-
     </div>
 
     <div class="example">
       <div class="label">A simple example</div>
-
-      <h3>
-        Michael Phelps doesn't have to remind himself that he's a swimmer.
-      </h3>
-
-      <p>
-        He swims. Constantly. His training, environment, standards,
-        and relationships all reinforce that identity.
-        The behavior is evidence of who he is.
-      </p>
+      <h3>Michael Phelps doesn't have to remind himself that he's a swimmer.</h3>
+      <p>He swims. Constantly. His training, environment, standards, and relationships all reinforce that identity. The behavior is evidence of who he is.</p>
     </div>
-
   </div>
 </section>
 
-
 <section>
   <div class="wrap">
-
     <div class="head">
       <div class="eyebrow">The leverage point</div>
-
-      <h2>
-        You don't need a 50-step plan.
-      </h2>
-
+      <h2>You don't need a 50-step plan.</h2>
       <p class="lead">
         Trying to change everything at once can create another identity crisis.
         The goal is to identify the few changes capable of creating disproportionate movement.
@@ -681,70 +276,42 @@ footer{
     </div>
 
     <div class="three">
-
       <div class="practice">
         <div class="num">01 · START</div>
-
         <h3>What is the primary action?</h3>
-
-        <p>
-          What does the person you're becoming actually do?
-          What needs to enter your life and become non-negotiable?
-        </p>
+        <p>What does the person you're becoming actually do? What needs to enter your life and become non-negotiable?</p>
       </div>
-
       <div class="practice">
         <div class="num">02 · STOP</div>
-
         <h3>What is reinforcing the old identity?</h3>
-
-        <p>
-          What behavior, habit, relationship, or pattern keeps pulling you
-          back into the person you're trying to leave?
-        </p>
+        <p>What behavior, habit, relationship, or pattern keeps pulling you back into the person you're trying to leave?</p>
       </div>
-
       <div class="practice">
         <div class="num">03 · ENVIRONMENT</div>
-
         <h3>What has to change around you?</h3>
-
-        <p>
-          What people, spaces, standards, inputs, or circumstances need to change
-          so the new identity has somewhere to live?
-        </p>
+        <p>What people, spaces, standards, inputs, or circumstances need to change so the new identity has somewhere to live?</p>
       </div>
-
     </div>
 
     <div class="quote">
       <span>You don't need more things to do.</span><br>
       You need the right things to do.
     </div>
-
   </div>
 </section>
 
-
 <section class="initiation">
   <div class="wrap">
-
     <div class="head">
       <div class="eyebrow">Why I call it an initiation</div>
-
-      <h2>
-        Change needs a moment when it becomes real.
-      </h2>
+      <h2>Change needs a moment when it becomes real.</h2>
     </div>
-
     <div class="initiation-copy">
-
       <p class="lead">
         Think about a baptism, graduation, induction, or any other ritual that marks
         a transition from one identity into another. The ceremony itself may be simple,
         but the significance of taking the step can create pressure and meaning around the change.
       </p>
-
       <p class="lead" style="margin-top:28px">
         The private session is designed to serve that function: not as a magical shortcut,
         but as a deliberate point of commitment where we identify what you're leaving,
@@ -752,287 +319,204 @@ footer{
       </p>
 
       <div class="process">
-
         <div class="process-row">
           <strong>We look at your story.</strong>
-          <p>
-            Patterns, relationships, environments, decisions,
-            and the identity they have been reinforcing.
-          </p>
+          <p>Patterns, relationships, environments, decisions, and the identity they have been reinforcing.</p>
         </div>
-
         <div class="process-row">
           <strong>We define your North Star.</strong>
-          <p>
-            We put a specific name and shape around the person you're actually trying to become.
-          </p>
+          <p>We put a specific name and shape around the person you're actually trying to become.</p>
         </div>
-
         <div class="process-row">
           <strong>We identify the three high-leverage changes.</strong>
-          <p>
-            One thing to start, one thing to stop,
-            and the environmental change that supports the transition.
-          </p>
+          <p>One thing to start, one thing to stop, and the environmental change that supports the transition.</p>
         </div>
-
         <div class="process-row">
           <strong>We make the first move.</strong>
-          <p>
-            The goal is not to leave with another notebook full of ideas.
-            We identify what can be acted on immediately.
-          </p>
+          <p>The goal is not to leave with another notebook full of ideas. We identify what can be acted on immediately.</p>
         </div>
-
         <div class="process-row">
           <strong>You leave with the identity statement.</strong>
-          <p>
-            Your old identity, your new identity,
-            your three high-leverage points,
-            and a statement that closes the initiation.
-          </p>
+          <p>Your old identity, your new identity, your three high-leverage points, and a statement that closes the initiation.</p>
         </div>
-
       </div>
     </div>
   </div>
 </section>
 
-
 <section class="offer" id="offer">
   <div class="wrap">
-
     <div class="offer-box">
-
       <div class="eyebrow">The offer</div>
-
-      <h2>
-        The Private Identity Change Initiation
-      </h2>
-
-      <div class="price">$333</div>
-
+      <h2>The Private Identity Change Initiation</h2>
+      <div class="price"><span class="old-price" id="oldPrice" hidden>$333</span><span id="mainPrice">$333</span></div>
+      <p class="price-note" id="priceNote">Current price · increases to $555 when the countdown ends.</p>
       <p class="lead">
-        One focused hour to stop circling the problem
-        and identify the change that actually matters.
+        One focused hour to stop circling the problem and identify the change that actually matters.
       </p>
 
       <div class="stack">
-
         <div class="stack-item">
           <strong>60-Minute Private Session</strong>
-          <p>
-            A focused 1:1 conversation around your story, patterns,
-            identity, direction, and current reality.
-          </p>
+          <p>A focused 1:1 conversation around your story, patterns, identity, direction, and current reality.</p>
         </div>
-
         <div class="stack-item">
           <strong>Personalized Identity Synthesis</strong>
-          <p>
-            A clear articulation of the old identity you're leaving
-            and the new identity you're moving toward.
-          </p>
+          <p>A clear articulation of the old identity you're leaving and the new identity you're moving toward.</p>
         </div>
-
         <div class="stack-item">
           <strong>Three High-Leverage Practices</strong>
-          <p>
-            Your specific Start, Stop, and Environment changes—the few
-            inputs we believe deserve your attention first.
-          </p>
+          <p>Your specific Start, Stop, and Environment changes—the few inputs we believe deserve your attention first.</p>
         </div>
-
         <div class="stack-item">
           <strong>Identity Statement</strong>
-          <p>
-            A concise statement you can use to anchor the transition
-            and the person you're choosing to express.
-          </p>
+          <p>A concise statement you can use to anchor the transition and the person you're choosing to express.</p>
         </div>
-
       </div>
 
       <p class="not">
-        This is not a giant course, a 50-step program, or an invitation
-        to become dependent on coaching.
+        This is not a giant course, a 50-step program, or an invitation to become dependent on coaching.
         The objective is concentrated clarity followed by action.
       </p>
 
       <div class="guidance">
-
-        <div class="eyebrow">
-          If you want to go deeper
-        </div>
-
+        <div class="eyebrow">If you want to go deeper</div>
         <p>
           Sometimes the initial clarity is not the hard part—implementation is.
-          If deeper support makes sense for you, we can discuss a focused
-          30-day private guidance experience during the session.
-          You do not need to decide that beforehand.
+          If deeper support makes sense for you, we can discuss a focused 30-day private guidance
+          experience during the session. You do not need to decide that beforehand.
         </p>
-
       </div>
 
       <div class="actions">
-        <a
-          class="cta"
-          href="https://calendly.com/naturopathpain/1v1">
-          BOOK YOUR PRIVATE SESSION — $333 →
-        </a>
+        <a class="cta" href="https://calendly.com/naturopathpain/1v1"><span class="cta-label">BOOK YOUR PRIVATE SESSION — $333 →</span><span class="cta-timer" data-countdown-line>PRICE INCREASE IN <span class="timer-value" data-timer-value>24:00:00</span></span></a>
       </div>
-
     </div>
   </div>
 </section>
-
 
 <section class="objections">
   <div class="wrap">
-
     <div class="head">
       <div class="eyebrow">Before you book</div>
-
-      <h2>
-        A few things you may be thinking.
-      </h2>
+      <h2>A few things you may be thinking.</h2>
     </div>
 
     <div class="objection">
-      <h3>
-        "I should be able to figure this out myself."
-      </h3>
-
-      <p>
-        You might. The point isn't that you need someone to tell you how to live.
-        Another perspective can help you see the pattern you're inside of faster and more clearly.
-        Even people operating at the highest levels use coaches, mentors,
-        collaborators, and catalysts.
-      </p>
+      <h3>"I should be able to figure this out myself."</h3>
+      <p>You might. The point isn't that you need someone to tell you how to live. Another perspective can help you see the pattern you're inside of faster and more clearly. Even people operating at the highest levels use coaches, mentors, collaborators, and catalysts.</p>
     </div>
 
     <div class="objection">
-      <h3>
-        "I don't even know exactly what my problem is."
-      </h3>
-
-      <p>
-        That's okay. You don't need to arrive with a diagnosis.
-        Understanding what's actually happening is part of the session.
-      </p>
+      <h3>"I don't even know exactly what my problem is."</h3>
+      <p>That's okay. You don't need to arrive with a diagnosis. Understanding what's actually happening is part of the session.</p>
     </div>
 
     <div class="objection">
-      <h3>
-        "I already know what I need to do."
-      </h3>
-
-      <p>
-        Then the more interesting question is: why haven't you done it?
-        If the answer is identity, environment, fear, familiarity,
-        or a competing pattern, that's exactly the gap we can examine.
-      </p>
+      <h3>"I already know what I need to do."</h3>
+      <p>Then the more interesting question is: why haven't you done it? If the answer is identity, environment, fear, familiarity, or a competing pattern, that's exactly the gap we can examine.</p>
     </div>
 
     <div class="objection">
-      <h3>
-        "I don't want someone telling me what to do."
-      </h3>
-
-      <p>
-        Neither do I. You remain responsible for your decisions.
-        The purpose of the work is to make the situation clearer
-        so you can choose and act from the identity you want to embody.
-      </p>
+      <h3>"I don't want someone telling me what to do."</h3>
+      <p>Neither do I. You remain responsible for your decisions. The purpose of the work is to make the situation clearer so you can choose and act from the identity you want to embody.</p>
     </div>
 
     <div class="objection">
-      <h3>
-        "Is this therapy?"
-      </h3>
-
-      <p>
-        No. This is a focused identity, direction, behavior,
-        and implementation conversation—not psychotherapy or mental-health treatment.
-      </p>
+      <h3>"Is this therapy?"</h3>
+      <p>No. This is a focused identity, direction, behavior, and implementation conversation—not psychotherapy or mental-health treatment.</p>
     </div>
 
     <div class="objection">
-      <h3>
-        "$333 is a meaningful investment."
-      </h3>
-
-      <p>
-        Yes. That's intentional. This is for someone who has a real gap
-        they want to address and is ready to do something about it—not someone
-        looking for another interesting conversation.
-      </p>
+      <h3 id="priceObjection">"$333 is a meaningful investment."</h3>
+      <p>Yes. That's intentional. This is for someone who has a real gap they want to address and is ready to do something about it—not someone looking for another interesting conversation.</p>
     </div>
-
   </div>
 </section>
-
 
 <section class="guarantee">
   <div class="wrap">
-
     <div class="guarantee-box">
-
-      <div class="eyebrow">
-        Your decision
-      </div>
-
-      <h2>
-        If you're not satisfied with the session, I'll refund you.
-      </h2>
-
+      <div class="eyebrow">Your decision</div>
+      <h2>If you're not satisfied with the session, I'll refund you.</h2>
       <p class="lead" style="margin-top:22px">
-        I want the session to be genuinely useful to you.
-        If you leave feeling that the work did not provide the value
-        you were looking for, tell me.
-        The refund terms are provided before purchase.
+        I want the session to be genuinely useful to you. If you leave feeling that the work did not provide
+        the value you were looking for, tell me. The refund terms are provided before purchase.
       </p>
-
     </div>
-
   </div>
 </section>
-
 
 <section class="final">
   <div class="wrap">
-
-    <div class="eyebrow">
-      The first move
-    </div>
-
-    <h2>
-      You already have an idea of who you're becoming.
-    </h2>
-
+    <div class="eyebrow">The first move</div>
+    <h2>You already have an idea of who you're becoming.</h2>
     <p class="lead">
-      You don't need to solve your entire life today.
-      You need to identify what matters next and make the first move real.
+      You don't need to solve your entire life today. You need to identify what matters next
+      and make the first move real.
     </p>
-
-    <a
-      class="cta"
-      href="https://calendly.com/naturopathpain/1v1">
-      BOOK YOUR PRIVATE SESSION — $333 →
-    </a>
-
-    <div class="micro">
-      Your booking is the first deliberate step toward the identity
-      you're choosing to express.
-    </div>
-
+    <a class="cta" href="https://calendly.com/naturopathpain/1v1"><span class="cta-label">BOOK YOUR PRIVATE SESSION — $333 →</span><span class="cta-timer" data-countdown-line>PRICE INCREASE IN <span class="timer-value" data-timer-value>24:00:00</span></span></a>
+    <div class="micro">Your booking is the first deliberate step toward the identity you're choosing to express.</div>
   </div>
 </section>
 
+<footer>The Magician's Path · 1:1 Identity Change Initiation</footer>
+<script>
+(() => {
+  // Fixed deadline; this does not reset when someone reloads or revisits the page.
+  const deadline = new Date('2026-10-12T10:28:00-07:00').getTime();
+  const mainPrice = document.getElementById('mainPrice');
+  const oldPrice = document.getElementById('oldPrice');
+  const priceNote = document.getElementById('priceNote');
+  const objection = document.getElementById('priceObjection');
+  const ctas = [...document.querySelectorAll('.cta')];
+  let expired = false;
 
-<footer>
-  The Magician's Path · 1:1 Identity Change Initiation
-</footer>
+  function setPrice(isExpired) {
+    if (mainPrice) mainPrice.textContent = isExpired ? '$555' : '$333';
+    if (oldPrice) oldPrice.hidden = !isExpired;
+    if (priceNote) priceNote.textContent = isExpired
+      ? 'The introductory price has ended. Current price: $555.'
+      : 'Current price · increases to $555 when the countdown ends.';
+    if (objection) objection.textContent = isExpired
+      ? '"$555 is a meaningful investment."'
+      : '"$333 is a meaningful investment."';
+    ctas.forEach(a => {
+      const label = a.querySelector('.cta-label');
+      const timerLine = a.querySelector('[data-countdown-line]');
+      if (label) label.textContent = isExpired
+        ? 'BOOK YOUR PRIVATE SESSION — $555 →'
+        : 'BOOK YOUR PRIVATE SESSION — $333 →';
+      if (timerLine) timerLine.textContent = isExpired
+        ? 'INTRODUCTORY PRICE ENDED'
+        : 'PRICE INCREASE IN 24:00:00';
+    });
+  }
 
+  function tick() {
+    const remaining = deadline - Date.now();
+    if (remaining <= 0) {
+      if (!expired) { expired = true; setPrice(true); }
+      return;
+    }
+    const totalSeconds = Math.floor(remaining / 1000);
+    const display = [
+      String(Math.floor(totalSeconds / 3600)).padStart(2, '0'),
+      String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0'),
+      String(totalSeconds % 60).padStart(2, '0')
+    ].join(':');
+    document.querySelectorAll('[data-timer-value]').forEach(el => el.textContent = display);
+  }
+
+  if (Date.now() >= deadline) {
+    expired = true;
+    setPrice(true);
+  } else {
+    setPrice(false);
+    tick();
+    setInterval(tick, 1000);
+  }
+})();
+</script>
 </body>
 </html>
