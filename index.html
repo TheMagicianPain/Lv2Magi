@@ -487,9 +487,14 @@ footer{padding:28px;text-align:center;color:#666d76;border-top:1px solid var(--l
       if (label) label.textContent = isExpired
         ? 'BOOK YOUR PRIVATE SESSION — $555 →'
         : 'BOOK YOUR PRIVATE SESSION — $333 →';
-      if (timerLine) timerLine.textContent = isExpired
-        ? 'INTRODUCTORY PRICE ENDED'
-        : 'PRICE INCREASE IN 24:00:00';
+      if (timerLine) {
+        if (isExpired) {
+          timerLine.textContent = 'INTRODUCTORY PRICE ENDED';
+        } else {
+          // Preserve the nested timer-value element so the live countdown can update it.
+          timerLine.innerHTML = 'PRICE INCREASE IN <span class="timer-value" data-timer-value>--:--:--</span>';
+        }
+      }
     });
   }
 
