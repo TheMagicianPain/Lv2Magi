@@ -47,6 +47,8 @@ p{margin:0;color:var(--muted)}
 .video-box{aspect-ratio:16/9;background:#000;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 90px rgba(0,0,0,.5)}
 iframe{width:100%;height:100%;border:0}
 .actions{display:flex;justify-content:center;align-items:center;margin-top:30px}
+/* Keep the first booking CTA below the initial VSL viewport. */
+.hero .actions{margin-top:420px}
 .cta{
   display:inline-flex;align-items:center;justify-content:center;
   min-height:64px;padding:0 38px;border-radius:10px;
@@ -129,8 +131,16 @@ iframe{width:100%;height:100%;border:0}
   padding:27px 20px;border-top:1px solid var(--line)
 }
 .stack-item:last-child{border-bottom:1px solid var(--line)}
-.stack-item strong{display:block;color:#fff;font-size:1.2rem;margin-bottom:6px}
+.stack-item strong{display:block;color:#fff;font-size:1.2rem;margin:7px 0 6px}
 .stack-item p{font-size:1rem}
+.stack-item .num{color:var(--gold2)}
+.stack-value{display:inline-block;margin:12px 0 0;padding:6px 15px;border:1px solid rgba(255,212,90,.34);border-radius:40px;color:var(--gold2);font-size:.91rem;font-weight:700;letter-spacing:.04em}
+.value-total{margin:28px auto 0;padding:27px 22px;border:1px solid rgba(255,212,90,.42);border-radius:15px;background:rgba(255,212,90,.055)}
+.value-total .total-label{font-size:.88rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.value-total .total-number{font:clamp(3rem,7vw,5rem)/1.1 "Cormorant Garamond",serif;color:var(--gold2);margin:8px 0}
+.value-total .comparison{font-size:1.15rem;color:#fff}
+.value-total .value-disclaimer{font-size:.82rem;color:var(--soft);margin-top:12px}
+.investment .offer-price-heading{font-size:1.1rem;color:#fff;margin-top:28px}
 .not{
   margin:38px auto 0;max-width:680px;color:var(--soft);font-size:.96rem
 }
@@ -169,8 +179,11 @@ footer{padding:28px;text-align:center;color:#666d76;border-top:1px solid var(--l
   section{padding:95px 0}
   .hero{padding:85px 0 80px}
   .wrap{width:min(calc(100% - 30px),var(--max))}
+  .hero .actions{margin-top:260px}
   .cta{width:100%;padding:0 20px}
 }
+.investment{margin-top:54px;padding-top:28px;border-top:1px solid var(--line)}
+.stack-item em{font-style:normal;color:var(--gold2)}
 </style>
 </head>
 <body>
@@ -183,15 +196,14 @@ footer{padding:28px;text-align:center;color:#666d76;border-top:1px solid var(--l
     <div class="sub">A 1:1 Identity Change Initiation</div>
     <p class="lead">
       You may not have an information problem. You may have an identity problem.
-      This is a focused private session designed to help you identify the old identity,
-      define the one you're moving into, and make the first high-leverage changes real.
+      This is a personalized 30-day identity initiation: one private session, a blueprint built around your story, three high-leverage changes, three custom subconscious-focused guided meditations, and direct support as you put the work into practice.
     </p>
 
     <div class="video-wrap">
       <div class="video-box">
         <iframe
-          src="https://www.youtube.com/embed/JhHoR2T7x34?rel=0&playsinline=1"
-          title="The Magician's Path — Identity Change Initiation"
+          src="https://www.youtube-nocookie.com/embed/MzIC7Silcfo?rel=0&playsinline=1"
+          title="Private Identity Initiation — Full Video Sales Letter"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
@@ -199,9 +211,9 @@ footer{padding:28px;text-align:center;color:#666d76;border-top:1px solid var(--l
     </div>
 
     <div class="actions">
-      <a class="cta" href="https://calendly.com/naturopathpain/1v1"><span class="cta-label">BOOK YOUR PRIVATE SESSION — $333 →</span><span class="cta-timer" data-countdown-line>PRICE INCREASE IN <span class="timer-value" data-timer-value>24:00:00</span></span></a>
+      <a class="cta" href="https://calendly.com/naturopathpain/1v1"><span class="cta-label">BEGIN YOUR PRIVATE INITIATION — $555 →</span></a>
     </div>
-    <div class="micro">60 minutes · personalized identity work · book directly</div>
+    <div class="micro">60-minute private session · 3 custom meditations · 30 days of direct support</div>
   </div>
 </header>
 
@@ -336,10 +348,60 @@ footer{padding:28px;text-align:center;color:#666d76;border-top:1px solid var(--l
           <p>The goal is not to leave with another notebook full of ideas. We identify what can be acted on immediately.</p>
         </div>
         <div class="process-row">
-          <strong>You leave with the identity statement.</strong>
-          <p>Your old identity, your new identity, your three high-leverage points, and a statement that closes the initiation.</p>
+          <strong>You receive your personalized identity blueprint.</strong>
+          <p>A written plan mapping your current patterns, the identity you are choosing, and the three changes that help bridge the gap—delivered after our session.</p>
+        </div>
+        <div class="process-row">
+          <strong>We turn the work into three custom meditations.</strong>
+          <p>Three personalized recordings built from our conversation, using guided imagery and suggestion to work with the subconscious associations you want to change. Delivered with your blueprint in the next couple of days.</p>
+        </div>
+        <div class="process-row">
+          <strong>You have direct access to me for 30 days.</strong>
+          <p>Ask questions, share what comes up as you implement, and get personal guidance during your integration period.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="initiation" id="custom-meditations">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">The subconscious component · included in your initiation</div>
+      <h2>Understanding the pattern is one thing.<br><span style="color:var(--gold2)">Changing your relationship with it is another.</span></h2>
+      <p class="lead">You can consciously decide to become someone new and still find yourself responding from old beliefs, fears, and familiar emotional patterns.</p>
+    </div>
+    <div class="copy">
+      <p>That's why your initiation includes <strong style="color:#fff">three custom guided meditations</strong>—created specifically from what we uncover during your private session.</p>
+      <p>Rather than another generic audio recording, each meditation is built around your personal identity work. Guided imagery, focused attention, and suggestion are used to help you engage the subconscious beliefs and associations you want to change.</p>
+      <p>Return to these recordings after our session to rehearse the identity you're choosing, reflect on the patterns you're leaving, and support the real-world actions in your blueprint.</p>
+      <p class="emphasis">The session brings the pattern into awareness.<br>The meditations give you a way to keep working with it.</p>
+      <p style="font-size:.92rem;color:var(--soft)">These meditations are for personal development, not medical or psychological treatment. Individual results vary.</p>
+    </div>
+  </div>
+</section>
+
+<section class="initiation" id="sample-meditation" aria-labelledby="sample-meditation-heading">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Experience the approach</div>
+      <h2 id="sample-meditation-heading">Listen to a guided <span style="color:var(--gold2)">meditation sample.</span></h2>
+      <p class="lead">Want to experience my meditation style before booking? Start with this general-purpose guided meditation.</p>
+    </div>
+    <div class="video-wrap" style="margin-top:0">
+      <div class="video-box">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/7Ml69h7Dqns?rel=0&amp;playsinline=1"
+          title="Sample guided meditation — general-purpose example"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+    <div class="copy" style="margin-top:32px">
+      <p><strong style="color:#fff">Important: this is a general-purpose example, not one of your three custom meditations.</strong> It is not tailored to your exact problem, personal history, subconscious associations, or desired identity.</p>
+      <p>Inside the Private Identity Initiation, your three guided meditations are created <em>after</em> our session, using what we uncover about your specific patterns and goals. This sample simply gives you a feel for the experience.</p>
     </div>
   </div>
 </section>
@@ -347,49 +409,55 @@ footer{padding:28px;text-align:center;color:#666d76;border-top:1px solid var(--l
 <section class="offer" id="offer">
   <div class="wrap">
     <div class="offer-box">
-      <div class="eyebrow">The offer</div>
-      <h2>The Private Identity Change Initiation</h2>
-      <div class="price"><span class="old-price" id="oldPrice" hidden>$333</span><span id="mainPrice">$333</span></div>
-      <p class="price-note" id="priceNote">Current price · increases to $555 when the countdown ends.</p>
-      <p class="lead">
-        One focused hour to stop circling the problem and identify the change that actually matters.
-      </p>
-
-      <div class="stack">
+      <div class="eyebrow">Your complete initiation · The full value stack</div>
+      <h2>Five layers of personal transformation.<br><span style="color:var(--gold2)">One initiation.</span></h2>
+      <p class="lead">We uncover the identity patterns behind your current reality, design a practical blueprint for the person you want to become, then support that work through custom subconscious-focused meditations and 30 days of direct guidance. Here is exactly what is included—and how I value each part of the experience.</p>
+      <div class="stack" aria-label="Everything included in your Private Identity Initiation">
         <div class="stack-item">
-          <strong>60-Minute Private Session</strong>
-          <p>A focused 1:1 conversation around your story, patterns, identity, direction, and current reality.</p>
+          <div class="num">01 · DISCOVER</div>
+          <strong>60-Minute Private Identity Session</strong>
+          <p>Meet with me on Zoom—or by phone if you prefer. We explore your story, current identity, desired identity, and the subconscious associations that may be creating friction between them.</p>
+          <div class="stack-value">Assigned value: $777</div>
         </div>
         <div class="stack-item">
-          <strong>Personalized Identity Synthesis</strong>
-          <p>A clear articulation of the old identity you're leaving and the new identity you're moving toward.</p>
+          <div class="num">02 · DEFINE</div>
+          <strong>Your Personalized Identity Blueprint</strong>
+          <p>A written roadmap based on our conversation: who you've been, who you're becoming, and the patterns and environments reinforcing each identity. Delivered in the next couple of days after our session.</p>
+          <div class="stack-value">Assigned value: $1,111</div>
         </div>
         <div class="stack-item">
-          <strong>Three High-Leverage Practices</strong>
-          <p>Your specific Start, Stop, and Environment changes—the few inputs we believe deserve your attention first.</p>
+          <div class="num">03 · DIRECT</div>
+          <strong>Three High-Leverage Changes</strong>
+          <p>One thing to <em>stop</em>, one thing to <em>start</em>, and one change to your <em>environment</em>. Three specific priorities—not another overwhelming list of habits.</p>
+          <div class="stack-value">Assigned value: $555</div>
         </div>
         <div class="stack-item">
-          <strong>Identity Statement</strong>
-          <p>A concise statement you can use to anchor the transition and the person you're choosing to express.</p>
+          <div class="num">04 · REINFORCE</div>
+          <strong>Three Custom Subconscious-Focused Guided Meditations</strong>
+          <p>Three guided recordings I create specifically for you from what we uncover together. Using imagery, focused attention, and suggestion, they are designed to help you work with the beliefs and emotional associations connected to your old identity and rehearse the one you're choosing. Delivered with your blueprint in the next couple of days.</p>
+          <div class="stack-value">Assigned value: $2,331</div>
+        </div>
+        <div class="stack-item">
+          <div class="num">05 · INTEGRATE</div>
+          <strong>30 Days of Direct Private Support</strong>
+          <p>For the 30 days following our session, you'll have direct access to communicate with me as you put your blueprint and meditations into practice, encounter resistance, and work to integrate the changes.</p>
+          <div class="stack-value">Assigned value: $1,333</div>
         </div>
       </div>
-
-      <p class="not">
-        This is not a giant course, a 50-step program, or an invitation to become dependent on coaching.
-        The objective is concentrated clarity followed by action.
-      </p>
-
-      <div class="guidance">
-        <div class="eyebrow">If you want to go deeper</div>
-        <p>
-          Sometimes the initial clarity is not the hard part—implementation is.
-          If deeper support makes sense for you, we can discuss a focused 30-day private guidance
-          experience during the session. You do not need to decide that beforehand.
-        </p>
+      <div class="value-total" aria-label="Offer value comparison">
+        <div class="total-label">Total assigned value</div>
+        <div class="total-number">$6,107</div>
+        <div class="comparison">Over <strong>11×</strong> the $555 investment.</div>
+        <p class="value-disclaimer">These are my illustrative values for each component of this package, not separate retail prices or verified market rates.</p>
       </div>
-
-      <div class="actions">
-        <a class="cta" href="https://calendly.com/naturopathpain/1v1"><span class="cta-label">BOOK YOUR PRIVATE SESSION — $333 →</span><span class="cta-timer" data-countdown-line>PRICE INCREASE IN <span class="timer-value" data-timer-value>24:00:00</span></span></a>
+      <p class="not">Your session is where we gather the information. Your blueprint, three changes, personalized meditations, and 30 days of support are how you continue the work.</p>
+      <div class="investment">
+        <div class="eyebrow">The complete $6,107 assigned-value package</div>
+        <p class="offer-price-heading">Your investment today</p>
+        <div class="price">$555</div>
+        <p class="price-note">All five components included. One payment. No embedded checkout.</p>
+        <div class="actions"><a class="cta" href="https://calendly.com/naturopathpain/1v1"><span class="cta-label">BEGIN YOUR PRIVATE INITIATION — $555 →</span></a></div>
+        <p class="micro">Booking opens separately. No embedded checkout on this page.</p>
       </div>
     </div>
   </div>
@@ -423,13 +491,21 @@ footer{padding:28px;text-align:center;color:#666d76;border-top:1px solid var(--l
     </div>
 
     <div class="objection">
+      <h3>"I've already tried meditation."</h3>
+      <p>These aren't generic recordings. I create three meditations based on the identity and subconscious associations we identify together, so the practice reflects your specific goals.</p>
+    </div>
+    <div class="objection">
+      <h3>"Can one session really be enough?"</h3>
+      <p>The call is the starting point, not the entire offer. You'll receive your written blueprint, three custom guided meditations, and direct support for the following 30 days to help you put the work into practice.</p>
+    </div>
+    <div class="objection">
       <h3>"Is this therapy?"</h3>
       <p>No. This is a focused identity, direction, behavior, and implementation conversation—not psychotherapy or mental-health treatment.</p>
     </div>
 
     <div class="objection">
-      <h3 id="priceObjection">"$333 is a meaningful investment."</h3>
-      <p>Yes. That's intentional. This is for someone who has a real gap they want to address and is ready to do something about it—not someone looking for another interesting conversation.</p>
+      <h3 id="priceObjection">"$555 is a meaningful investment."</h3>
+      <p>Yes. That's intentional. This includes your private session, custom identity blueprint, three personalized guided meditations, and 30 days of direct support. The work requires your participation; it is not a passive quick fix.</p>
     </div>
   </div>
 </section>
@@ -438,11 +514,8 @@ footer{padding:28px;text-align:center;color:#666d76;border-top:1px solid var(--l
   <div class="wrap">
     <div class="guarantee-box">
       <div class="eyebrow">Your decision</div>
-      <h2>If you're not satisfied with the session, I'll refund you.</h2>
-      <p class="lead" style="margin-top:22px">
-        I want the session to be genuinely useful to you. If you leave feeling that the work did not provide
-        the value you were looking for, tell me. The refund terms are provided before purchase.
-      </p>
+      <h2>30-day satisfaction guarantee.</h2>
+      <p class="lead" style="margin-top:22px">If you're not completely satisfied with your initiation across the 30-day period, you can request a full refund. Full terms will be provided before purchase.</p>
     </div>
   </div>
 </section>
@@ -452,76 +525,14 @@ footer{padding:28px;text-align:center;color:#666d76;border-top:1px solid var(--l
     <div class="eyebrow">The first move</div>
     <h2>You already have an idea of who you're becoming.</h2>
     <p class="lead">
-      You don't need to solve your entire life today. You need to identify what matters next
-      and make the first move real.
+      You don't need more generic advice. You need a process built around your identity: a private session, a practical blueprint, custom meditations for subconscious-focused practice, and support for the next 30 days.
     </p>
-    <a class="cta" href="https://calendly.com/naturopathpain/1v1"><span class="cta-label">BOOK YOUR PRIVATE SESSION — $333 →</span><span class="cta-timer" data-countdown-line>PRICE INCREASE IN <span class="timer-value" data-timer-value>24:00:00</span></span></a>
-    <div class="micro">Your booking is the first deliberate step toward the identity you're choosing to express.</div>
+    <a class="cta" href="https://calendly.com/naturopathpain/1v1"><span class="cta-label">BEGIN YOUR PRIVATE INITIATION — $555 →</span></a>
+    <div class="micro">One 60-minute session. Three custom meditations. Thirty days of direct support.</div>
   </div>
 </section>
 
 <footer>The Magician's Path · 1:1 Identity Change Initiation</footer>
-<script>
-(() => {
-  // Fixed deadline; this does not reset when someone reloads or revisits the page.
-  const deadline = new Date('2026-10-12T10:28:00-07:00').getTime();
-  const mainPrice = document.getElementById('mainPrice');
-  const oldPrice = document.getElementById('oldPrice');
-  const priceNote = document.getElementById('priceNote');
-  const objection = document.getElementById('priceObjection');
-  const ctas = [...document.querySelectorAll('.cta')];
-  let expired = false;
 
-  function setPrice(isExpired) {
-    if (mainPrice) mainPrice.textContent = isExpired ? '$555' : '$333';
-    if (oldPrice) oldPrice.hidden = !isExpired;
-    if (priceNote) priceNote.textContent = isExpired
-      ? 'The introductory price has ended. Current price: $555.'
-      : 'Current price · increases to $555 when the countdown ends.';
-    if (objection) objection.textContent = isExpired
-      ? '"$555 is a meaningful investment."'
-      : '"$333 is a meaningful investment."';
-    ctas.forEach(a => {
-      const label = a.querySelector('.cta-label');
-      const timerLine = a.querySelector('[data-countdown-line]');
-      if (label) label.textContent = isExpired
-        ? 'BOOK YOUR PRIVATE SESSION — $555 →'
-        : 'BOOK YOUR PRIVATE SESSION — $333 →';
-      if (timerLine) {
-        if (isExpired) {
-          timerLine.textContent = 'INTRODUCTORY PRICE ENDED';
-        } else {
-          // Preserve the nested timer-value element so the live countdown can update it.
-          timerLine.innerHTML = 'PRICE INCREASE IN <span class="timer-value" data-timer-value>--:--:--</span>';
-        }
-      }
-    });
-  }
-
-  function tick() {
-    const remaining = deadline - Date.now();
-    if (remaining <= 0) {
-      if (!expired) { expired = true; setPrice(true); }
-      return;
-    }
-    const totalSeconds = Math.floor(remaining / 1000);
-    const display = [
-      String(Math.floor(totalSeconds / 3600)).padStart(2, '0'),
-      String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0'),
-      String(totalSeconds % 60).padStart(2, '0')
-    ].join(':');
-    document.querySelectorAll('[data-timer-value]').forEach(el => el.textContent = display);
-  }
-
-  if (Date.now() >= deadline) {
-    expired = true;
-    setPrice(true);
-  } else {
-    setPrice(false);
-    tick();
-    setInterval(tick, 1000);
-  }
-})();
-</script>
 </body>
 </html>
